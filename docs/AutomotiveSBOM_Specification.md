@@ -112,7 +112,7 @@ The Automotive SBOM data fields are described below.
 ####     1.3  SBOM Type
 <ins>Description and Uses</ins>  
 - Used to identify the timing and target of the SBOM.
-- Expressed using the CISA SBOM Types described in Chapter 8.4.
+- Expressed using the CISA SBOM Types described in Chapter 6.4.
 
 <ins>Specific examples</ins>  
 " creator comment ": [" Type : Build "]
@@ -147,7 +147,7 @@ The Automotive SBOM data fields are described below.
 - If the component is COTS or proprietary software, the legal entity name should be used in this field. If the legal entity name is not unique, jurisdiction information may be added.
 - If the component is OSS, this field should contain the name of the OSS project. If possible, add the name of the organization hosting the project (e.g., Apache Tomcat ). The OSS copyright statement may be used to identify the project name (e.g., " Meta Platforms, Inc. and affiliates" ).
 - If it is difficult to identify the supplier, you may use the domain URL or namespace information of the PURL of the software in question. The use of " unknown " is also permitted, but it is recommended that you do not use it too often.
--If a component provided by a higher-level supplier is used without modification, the name of the higher-level supplier should be used in this field. If the component has been modified by the supplier of the SBOM Primary Component , the name of the supplier of the SBOM Primary Component should be used in this field. Furthermore, information about the higher-level supplier should be conveyed using the Relationship field ( see Chapter 8.3 for details).
+-If a component provided by a higher-level supplier is used without modification, the name of the higher-level supplier should be used in this field. If the component has been modified by the supplier of the SBOM Primary Component , the name of the supplier of the SBOM Primary Component should be used in this field. Furthermore, information about the higher-level supplier should be conveyed using the Relationship field ( see Chapter 6.3 for details).
 
 <ins>Specific examples</ins>  
 "supplier": "Organization : B -Company "

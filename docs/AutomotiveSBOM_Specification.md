@@ -96,10 +96,10 @@ The Automotive SBOM data fields are described below.
 - Used to uniquely identify the SBOM creation entity.
 - This information identifies the entity that created (provided) the SBOM, and should be a company name or individual name. Multiple entities are allowed.
 - Include the legal entity name and unique identifier (e.g., email address, website) if available. If the legal entity name is not available, include the name of the SBOM creator along with contact information such as an email address.
-- If possible, include information about the tools and versions used by the SBOM creator to create the SBOM (this can be used to judge the quality of the SBOM).  
+- If possible, include information about the tools and versions used by the SBOM creator to create the SBOM (this can be used to judge the quality of the SBOM). Separate the tool name and tool version by "-".
 
 <ins>Specific examples</ins>  
-"creators": ["Organization: T Company, Ltd. ", "Tool: BlackDuck v2024.10.1"]
+"creators": ["Organization: T Company, Ltd. ", "Tool: BlackDuck - v2024.10.1"]
  
 ####     1.2  SBOM Timestamp
 <ins>Description and Uses</ins>  

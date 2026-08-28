@@ -263,9 +263,9 @@ Specific examples
 - Case 3 : The SBOM creator changes the license declared by the component creator  
 
       For example, the OSS component you acquired is dual-licensed (GPL-2.0-only and a commercial license), and you provide software containing that OSS component to a third party, and that party uses the target software as GPL-2.0-only software, you must state this in the SBOM.  
-      In this example, the license expression would be as follows:  
-        - Declared License " GPL-2.0-only or commercial license",  
-        - Concluded License " GPL -2.0 - only"  
+      In this example, the license expression would be as follows:
+        - Declared License "GPL-2.0-only or commercial license",
+        - Concluded License "GPL-2.0-only"
 
 ### 3.2.3. Checking for Consistency with Existing Industry Standards  
 The results of the consistency check against the definitions of data fields in existing industry standards are shown in Table 2.  

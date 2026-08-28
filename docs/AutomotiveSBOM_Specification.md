@@ -104,7 +104,7 @@ The Automotive SBOM data fields are described below.
 ####     1.2  SBOM Timestamp
 <ins>Description and Uses</ins>  
 - Used to identify the date and time the SBOM was created or updated.
-- Be represented in a format that is consistent across time zones and locales ( e.g., ISO 860111 ).
+- Be represented in a format that is consistent across time zones and locales (e.g., ISO 8601-1).
 
 <ins>Specific examples</ins>  
 "created": "2025-01-24T22:31:37Z"

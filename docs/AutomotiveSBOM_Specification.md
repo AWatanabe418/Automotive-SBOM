@@ -354,51 +354,57 @@ Table 3 SBOM Document Standard Format Coverage Check
 ### 3.3.3. Specific Expression Method (SPDX v2.3 format)  
 Below is an example of Automotive SBOM expressed in SPDX v2.3 format.  
 
-    {
-    "SPDXID": " SPDXRef -DOCUMENT",
-    " creationInfo " : {
-    "creators": [
-    "Organization: A Motor Corporation(company name)",
-    "Tool: SCA tool (tool name) v0.11.1 (version information)"
-    ],
-    "created": "2025-01-01T05:55:55Z",
-    " CreatorComment ": "Type: Build",
+```
+{
+    "SPDXID": "SPDXRef-DOCUMENT",
+    "creationInfo": {
+        "creators": [
+            "Organization: A Motor Corporation(company name)",
+            "Tool: SCA tool (tool name) v0.11.1 (version information)"
+        ],
+        "created": "2025-01-01T05:55:55Z",
+        "comment": "Type: Build"
     },
+    "dataLicense": "CC0-1.0",
+    "name": "automotive",
+    "spdxVersion": "SPDX-2.3",
+    "documentNamespace": "https://example.com/spdx/automotive",
     "packages": [
-    {
-    "SPDXID": "SPDXRef-custom-AAA-AAA-1.1.1-2025-01-01T05:55:55Z",
-    "name": "AAA-AAA(software product number)",
-    " versionInfo ": "1.1.1",
-    " PackageSupplier ": "Organization: A Motor Corporation (company name)"
-    " PackageFileName ": "AAA- AAA.tarz "
-    " downloadLocation ": "None",
-    "checksums": [
-    {
-    "algorithm": "SHA256",
-    " checksumValue ": "xxx"
-    }
+        {
+            "SPDXID": "SPDXRef-custom-AAA-AAA-1.1.1-2025-01-01",
+            "name": "AAA-AAA(software product number)",
+            "versionInfo": "1.1.1",
+            "supplier": "Organization: A Motor Corporation (company name)",
+            "packageFileName": "AAA-AAA.tarz",
+            "downloadLocation": "NONE",
+            "checksums": [
+                {
+                    "algorithm": "SHA256",
+                    "checksumValue": "83a33ff09648bb5fc5272baca88cf2b59fd81ac4cc6817b86998136af368708e"
+                }
+            ],
+            "licenseConcluded": "Apache-2.0",
+            "copyrightText": "(C) 2025 A MOTOR CORPORATION. (Copyright Notice) ",
+            "externalRefs": [
+                {
+                    "referenceCategory": "SECURITY",
+                    "referenceType": "cpe23Type",
+                    "referenceLocator": "cpe:2.3:a:*:xxxxxx:1.1.1:*:*:*:*:*:*:*",
+                    "comment": ""
+                }
+            ]
+        }
     ],
-    " licenseConcluded ": "Apache-2.0",
-    " copyrightText ": "(C) 2025 A MOTOR CORPORATION. (Copyright Notice) ",
-    " externalRefs ": [
-    {
-    " referenceCategory ": "SECURITY",
-    " referenceType ": "cpe23Type",
-    " referenceLocator ": "cpe:2.3:a:*:\\xxx\\/xxx:1.1.1:*:*:*:*:*:*:*",
-    "comment": ""
-    }
-    ],
-    },
     "relationships": [
-    {
-    " spdxElementId ": " SPDXRef -DOCUMENT",
-    " relationshipType ": "DESCRIBES",
-    " relatedSpdxElement ": "SPDXRef-custom-AAA-AAA-1.1.1-2025-01-01T05:55:55Z"
-    },
+        {
+            "spdxElementId": "SPDXRef-DOCUMENT",
+            "relationshipType": "DESCRIBES",
+            "relatedSpdxElement": "SPDXRef-custom-AAA-AAA-1.1.1-2025-01-01"
+        }
     ]
-    ]
-    }  
-  
+}
+```
+
 ## 3.4. Practice and Process  
 ### 3.4.1. SBOM File References  
 As described in Chapter 2.1, the SBOM file for a single vehicle is not represented as a single large SBOM file, but rather as a collection of multiple small SBOMs for each component part, bundled together using external references.  

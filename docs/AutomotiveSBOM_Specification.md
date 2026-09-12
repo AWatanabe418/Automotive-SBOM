@@ -328,7 +328,7 @@ Figure 3 Automotive SBOM Document Format
 Table 3 shows the results of the coverage check of the standard format of the SBOM document (whether the content of the SBOM document expressed in that format meets the data field requirements of the Automotive SBOM).   
 
 Table 3 SBOM Document Standard Format Coverage Check  
-|#|Automotive SBOM Data Fields|SPDX Lite @SPDX 2.3|ISO/IEC 5962:2021 (SPDX 2.3)|CycloneDX v1.6 (ECMA-424)|
+|#|Automotive SBOM Data Fields|SPDX Lite @SPDX 2.3|ISO/IEC 5962:2021 (SPDX 2.2.1)|CycloneDX v1.6 (ECMA-424)|
 |:--:|:--|:--|:--|:--|
 |1|SBOM Metadata|
 |1-1|SBOM Author Name|(6.8) Creator|(6.8) Creator:|metadata.authors|

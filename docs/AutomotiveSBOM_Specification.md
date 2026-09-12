@@ -510,15 +510,21 @@ The US government has been actively promoting SBOM since 2018. The automotive in
   The FCC administers the Cyber Trust Mark , which certifies compliance with minimum security and supply chain requirements for IoT devices (this program excludes automobiles and automotive equipment, as they are regulated by the NHTSA ).  
 
 ### 4.1.2. Trends in the Europe  
-**Cybersecurity Resilience Act and Related Regulations and Guidance**  
-  The EU is expected to provisionally pass the CRA in early 2024, with it expected to become law in early 2027. It will require SBOMs for a wide range of products , but vehicles and certain other products are regulated by other rules and are currently exempt from the CRA.  
+**Cyber Resilience Act (CRA) and Related Regulations and Guidance**  
+  The EU Cyber Resilience Act (CRA) entered into force in December 2024. As of October 2026, the CRA's vulnerability and incident reporting requirements are already in effect, while the majority of the Act's cybersecurity requirements will become fully applicable in December 2027. The CRA introduces cybersecurity and software transparency requirements, including support for SBOM-related practices, for a broad range of products with digital elements. Vehicles and certain other product categories are covered by sector-specific regulations and are therefore generally exempt from the CRA.  
 
 **Federal Office for Information Security - Germany**  
   Germany's cybersecurity government agency, is considering SBOM as part of the CRA . BSI developed a vulnerability notification standard called CSAF , and the U.S. CISA and a private working group adopted CSAF as the primary format for the VEX program, which allows suppliers to advise vendors of exploitability of vulnerabilities and provide remediation actions. SBOM, CSAF, and vulnerability data from the NVD enable end users to automate vulnerability processing and identify vulnerable components in their software inventory.  
 
 ### 4.1.3. Trends in Japan  
-**Ministry of Economy, Trade and Industry**  
-  METI has a strong interest in SBOM as part of its international standardization strategy, and METI will publish SBOM guidelines in 2023.
+**Ministry of Economy, Trade and Industry (METI)**  
+  Ministry of Economy, Trade and Industry (METI) continues to promote the adoption and practical use of Software Bill of Materials (SBOM) as part of Japan's software supply chain security and international standardization initiatives. Following the publication of the initial SBOM guidance in July 2023, METI released Guidance on Introduction of Software Bill of Materials (SBOM) for Software Management Ver. 2.0 in August 2024. The updated guidance expands beyond SBOM generation and includes vulnerability management processes, SBOM implementation models, contractual considerations, and practical adoption approaches for software suppliers and procuring organizations.  
+
+  METI has also been actively involved in international SBOM standardization efforts. In September 2025, METI joined cybersecurity authorities from multiple countries in endorsing A Shared Vision of Software Bill of Materials (SBOM) for Cybersecurity, establishing a common international vision for SBOM-based software transparency, vulnerability management, and Secure-by-Design practices.  
+
+  In July 2026, METI and Japan's national cybersecurity authorities further co-signed the international guidance 2026 Minimum Elements for a Software Bill of Materials (SBOM), led by CISA and international partners.  
+
+  As of October 2026, while SBOM adoption is not generally mandated under Japanese law, METI guidance and international SBOM frameworks are increasingly referenced in software procurement, supply chain security programs, Secure-by-Design initiatives, and emerging cybersecurity regulations such as the EU Cyber Resilience Act (CRA). Organizations that develop, procure, or operate software are therefore expected to establish capabilities for SBOM generation, sharing, validation, and vulnerability management.  
 
 ## 4.2. Industry Trends  
 **Health Information Sharing and Analysis Center**  

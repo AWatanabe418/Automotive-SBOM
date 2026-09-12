@@ -79,7 +79,7 @@ Table 1 Automotive SBOM Data Field Definitions
 |2-8|Component Declared License|-|Used to check the license of the target component|
 |2-9|Component Concluded License|〇|Used to check the license of the target component|
 |2-10|Component Cryptographic Hash|-|Used to verify the authenticity of the target component|
-|2-11|Component Copyright Notice|〇※|Used to check the copyright of the target component|
+|2-11|Component Copyright Notice|〇|Used to check the copyright of the target component|
 |2-12|Component External Document References|〇|Used for matching with external SBOM|
   
 (Legend: 〇: Required, - :  Optional)  

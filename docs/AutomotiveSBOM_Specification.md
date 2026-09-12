@@ -115,7 +115,7 @@ The Automotive SBOM data fields are described below.
 - Expressed using the CISA SBOM Types described in Chapter 6.4.
 
 <ins>Specific examples</ins>  
-" creator comment ": [" Type : Build "]
+" creator comment ": [" SBOM Type : Build "]
 
 ####     1.4  SBOM Primary Component
 <ins>Description and Uses</ins>  

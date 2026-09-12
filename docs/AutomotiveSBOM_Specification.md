@@ -276,7 +276,7 @@ Table 2 The Results of the Consistency Check
 |1|SBOM Metadata|
 |1-1|SBOM Author Name|■|■|■|■|
 |1-2|SBOM Timestamp|■|■|■|■|
-|1-3|SBOM Type|■|(□)|-|■|
+|1-3|SBOM Type|■|(□)|-|-|
 |1-4|SBOM Primary Component|■|-|-|-|
 |2|Component attribute|
 |2-1|Component Name|■|■|■|■|
@@ -287,10 +287,10 @@ Table 2 The Results of the Consistency Check
 |2-6|Component File Name|-|-|■|-|
 |2-7|Component Download Location|-|-|-|-|
 |2-8|Component Declared License|■|-|□|-|
-|2-9|Component Concluded License|-|□|■|■|
-|2-10|Component Cryptographic Hash|■|□|□|■|
+|2-9|Component Concluded License|-|□|■|□|
+|2-10|Component Cryptographic Hash|■|□|□|□|
 |2-11|Component Copyright Notice|■|-|-|-|
-|2-12|Component External Document References|-|-|-|■|
+|2-12|Component External Document References|-|-|-|□|
   
 (Legend: ■: Required, □: Additional or Optional, - :  Not applicable)  
 

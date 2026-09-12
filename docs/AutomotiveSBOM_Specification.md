@@ -167,18 +167,18 @@ The Automotive SBOM data fields are described below.
 <ins>Specific examples</ins>  
 "Relationship: SPDXRef-2b9b148e-fb5e-3079-2f88-d5e9f39431dc CONTAINS SPDXRef-9811def5-4723-5e3f-2dbd-8c33c9ff62ae"
 
-####     2.5  Component Unique Identifier  
-<ins>Description and Uses</ins>  
-- An identifier that uniquely identifies a component, which is a constituent part of a system. It is used to match the target component with external data, such as when retrieving information from a public vulnerability database.  
-- Identifiers that can be used include CPE ([Common Platform Enumeration](https://cpe.mitre.org/specification/index.html) ) , PURL ([Package URL](https://github.com/package-url/purl-spec) ) , SWID ([Software Identification](https://csrc.nist.gov/projects/software-identification-swid/guidelines) ) Tagging ([ISO/IEC 19770-2:2015](https://www.iso.org/standard/65666.html) ), and SWHID ([Software Hash Identifier](https://www.softwareheritage.org/software-hash-identifier-swhid/)  ) ([ISO/IEC 18670:2025](https://www.iso.org/standard/89985.html) ).  
-- Identifiers are designated as Required because they are used to match the target component with external data sources. At least one type of identifier must always be provided. Additional identifiers are optional; however, to enable cross‑referencing with various external data sources, it is desirable to include as many identifiers as possible when they are available.  
-- If the component is OSS, this field should use a PURL or SWHID. If the component is COTS or proprietary software, it is recommended to use the SWID tag (Software Identification Tag) assigned by the component’s supplier; however, this is not mandatory at present.  
+####     2.5  Component Unique Identifier
+<ins>Description and Uses</ins>
+- An identifier that uniquely identifies a component, which is a constituent part of a system. It is used to match the target component with external data, such as when retrieving information from a public vulnerability database.
+- Identifiers that can be used include CPE ([Common Platform Enumeration](https://cpe.mitre.org/specification/index.html)), PURL ([Package-URL](https://ecma-international.org/publications-and-standards/standards/ecma-427/)), SWID ([Software Identification](https://csrc.nist.gov/projects/software-identification-swid/guidelines)) Tagging ([ISO/IEC 19770-2:2015](https://www.iso.org/standard/65666.html)), and SWHID ([Software Hash Identifier](https://www.softwareheritage.org/software-hash-identifier-swhid/)) ([ISO/IEC 18670:2025](https://www.iso.org/standard/89985.html)).
+- Identifiers are designated as Required because they are used to match the target component with external data sources. At least one type of identifier must always be provided. Additional identifiers are optional; however, to enable cross‑referencing with various external data sources, it is desirable to include as many identifiers as possible when they are available.
+- If the component is OSS, this field should use a PURL or SWHID. If the component is COTS or proprietary software, it is recommended to use the SWID tag (Software Identification Tag) assigned by the component’s supplier; however, this is not mandatory at present.
 
-<ins>Specific examples</ins>  
-{" cpe ": "cpe:2.3:a:systembom:bomviewer:3.2.1"} ,  
-{"purl": " pkg:rpm / sysbom / bomgen "} ,  
-{" swid ": "65699569-EA51-4346-8BDC - 4076FA5C0E72"} ,  
-{" swhid ": " swh:1:dir:bc7ddd62cf3d72ffdc365e1bf2dea6eeaa44e185;origin=https://github.com/rdicosmo/parmap;visit=swh:1:snp:8ddca416836fbbc2a7704c69db38739bef6b 6cae;anchor=swh:1:rev:ecd3744ed558da4ea2bf9eb87b80b8949f417126 "}  
+<ins>Specific examples</ins>
+{"cpe": "cpe:2.3:a:systembom:bomviewer:3.2.1"},
+{"purl": "pkg:rpm/sysbom/bomgen"},
+{"swid ": "65699569-EA51-4346-8BDC - 4076FA5C0E72"},
+{"swhid": "swh:1:dir:bc7ddd62cf3d72ffdc365e1bf2dea6eeaa44e185;origin=https://github.com/rdicosmo/parmap;visit=swh:1:snp:8ddca416836fbbc2a7704c69db38739bef6b 6cae;anchor=swh:1:rev:ecd3744ed558da4ea2bf9eb87b80b8949f417126 "}
 
 ####     2.6  Component File Name  
 <ins>Description and Uses</ins>  

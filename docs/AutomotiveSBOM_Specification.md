@@ -53,7 +53,7 @@ The prerequisite for considering the definition of the Automotive SBOM specifica
 1. There will be no data fields for managing entity-specific information, such as model information. This information will be defined separately as an implementation requirement for each entity as a schema outside the SBOM.
 
 The reasons for not simply adopting existing industry standards are as follows:
-- Standards such as CISA Baseline Attribute, NTIA Minimum Elements, and BSI TR-03183 do not support data items used by automotive OEM intellectual property departments for license verification, such as the URL of the component source and whether it has been modified. The same applies to the definition of minimum SBOM elements by J-Auto-ISAC.
+- Standards such as CISA Baseline Attribute, NTIA Minimum Elements, and BSI TR-03183 do not support data items used by automotive OEM intellectual property departments for license verification, such as the URL of the component source and whether it has been modified. The same applies to the definition of minimum SBOM elements by J-Auto-ISAC(Document Number: [JAI-C00-0001](https://j-auto-isac.or.jp/documents/)).
 - The OpenChain Telco SBOM Guide Version 1.1 is SPDX-based, and restricting the SBOM document format may not be consistent with automotive industry practices.
 
 ## 3.2. Data Fields

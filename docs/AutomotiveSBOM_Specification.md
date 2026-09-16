@@ -423,52 +423,86 @@ In this case, the contents (excerpt) of the SBOM files for T-Sample and B-Compon
 
 T-Sample SBOM file
 
-    DocumentName : T-Sample
+    ## Document Information
+    SPDXVersion: SPDX-2.3
+    DataLicense: CC0-1.0
+    SPDXID: SPDXRef-DOCUMENT
+    DocumentName: T-Sample
+    DocumentNamespace: https://example.com/spdx/T-Sample
+
+    ## Creation Information
     Creator: Organization: T Company, Ltd.
+    Creator: Tool: SCA tool - v0.11.1
+    Created: 2025-01-01T05:55:55Z
+
     ## 2.4 Primary Component (described by the SBOM)
-    PackageName : T-Sample
+    PackageName: T-Sample
     SPDXID: SPDXRef-c1b604ed-8505-e4da-b1df-dce3d713cd96
-    PackageSupplier : Organization: T Company
-    Relationship: SPDXRef -DOCUMENT DESCRIBES SPDXRef-c1b604ed-8505-e4da-b1df-dce3d713cd96
+    PackageSupplier: Organization: T Company
+    PackageDownloadLocation: NOASSERTION
+    PackageFileName: T-Sample.exe
+    PackageCopyrightText: (C) 2025 T Company.
+
+    Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-c1b604ed-8505-e4da-b1df-dce3d713cd96
     Relationship: SPDXRef-c1b604ed-8505-e4da-b1df-dce3d713cd96 CONTAINS NONE
-    PackageFileName : T-Sample.exe
-    PackageCopyrightText : (C) 2025 T Company.
+
     ## 2.4 All-Levels Components
-    PackageName : A-Component
+    PackageName: A-Component
     SPDXID: SPDXRef-95869ba9-5659-646c-17f3-2f885cb82ea0
-    PackageSupplier : Organization: A Company
+    PackageSupplier: Organization: A Company
+    PackageDownloadLocation: NOASSERTION
+    PackageFileName: A-Component.lib
+
     Relationship: SPDXRef-c1b604ed-8505-e4da-b1df-dce3d713cd96 CONTAINS SPDXRef-95869ba9-5659-646c-17f3-2f885cb82ea0
     Relationship: SPDXRef-95869ba9-5659-646c-17f3-2f885cb82ea0 CONTAINS NOASSERTION	
-    PackageFileName : A-Component.lib
-    PackageName : B-Component
+
+    PackageName: B-Component
     SPDXID: SPDXRef-420b980c-6a0a-e4cd-a72c-e3d6bd406f02
-    PackageSupplier : Organization: B Company
+    PackageSupplier: Organization: B Company
+    PackageDownloadLocation: NOASSERTION
+    PackageFileName: B-Component.iso
+    ExternalDocumentRef: DocumentRef-B-Component https://www.b.sbom SHA256: a799be4c01d8b123fd7634e6f25c8bce763213f265514c1c37781c856c352e85
+
     Relationship: SPDXRef-c1b604ed-8505-e4da-b1df-dce3d713cd96 CONTAINS SPDXRef-420b980c-6a0a-e4cd-a72c-e3d6bd406f02
     Relationship: SPDXRef-420b980c-6a0a-e4cd-a72c-e3d6bd406f02 CONTAINS NOASSERTION	
-    PackageFileName : B- Component.iso
-    ExternalDocumentRef : DocmentRef-B-Component - SBOM http://www.b.sbom SHA256: a799be4c01d8b123fd7634e6f25c8bce763213f265514c1c37781c856c352e85
-    Relationship: SPDXRef-420b980c-6a0a-e4cd-a72c-e3d6bd406f02 DESCRIBED_BY DocumentRef-B-Component - SBOM:SPDXRef-DOCUMENT
-  
+
+    Relationship: SPDXRef-420b980c-6a0a-e4cd-a72c-e3d6bd406f02 DESCRIBED_BY DocumentRef-B-Component
+
 B-Component SBOM file
 
-    DocumentName : B-Component SBOM
+    ## Document Information
+    SPDXVersion: SPDX-2.3
+    DataLicense: CC0-1.0
+    SPDXID: SPDXRef-DOCUMENT
+    DocumentName: B-Component SBOM
+    DocumentNamespace: https://example.com/spdx/B-Component
+
+    ## Creation Information
     Creator: Organization: B Company, Ltd.
+    Creator: Tool: SCA tool - v0.11.1
+    Created: 2025-01-01T05:55:55Z
+
     ## 2.4 Primary Component (described by the SBOM)
-    PackageName : B-Component
+    PackageName: B-Component
     SPDXID: SPDXRef-8ff4a961-c5a9-b275-80da-e6c7f5a8d0a9
-    PackageSupplier : Organization: B Company
-    Relationship: SPDXRef -DOCUMENT DESCRIBES SPDXRef-8ff4a961-c5a9-b275-80da-e6c7f5a8d0a9
+    PackageSupplier: Organization: B Company
+    PackageDownloadLocation: NOASSERTION
+    PackageFileName: B-Component.iso
+    PackageCopyrightText: (C) 2025 B Company.
+
+    Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-8ff4a961-c5a9-b275-80da-e6c7f5a8d0a9
     Relationship: SPDXRef-8ff4a961-c5a9-b275-80da-e6c7f5a8d0a9 CONTAINS NONE
-    PackageFileName : B- Component.iso
-    PackageCopyrightText : (C) 2025 B Company.
+
     ## 2.4 All-Levels Components
-    PackageName : C-OSS-Component
+    PackageName: C-OSS-Component
     SPDXID: SPDXRef-47bbd860-11af-2a57-2210-a039bf50fde3
-    PackageSupplier : Organization: C Community
+    PackageSupplier: Organization: C Community
+    PackageDownloadLocation: NOASSERTION
+    PackageFileName: C-Component.pkg
+    PackageChecksum: SHA256: 9c50067a4da56808c6cfe11d6b71e1507c6115d2c22004ad7d3f6d4409367358
+
     Relationship: SPDXRef-8ff4a961-c5a9-b275-80da-e6c7f5a8d0a9 CONTAINS SPDXRef-47bbd860-11af-2a57-2210-a039bf50fde3
     Relationship: SPDXRef-47bbd860-11af-2a57-2210-a039bf50fde3 CONTAINS NOASSERTION	
-    PackageFileName : C- Component.pkg
-    PackageChecksum : SHA256: 9c50067a4da56808c6cfe11d6b71e1507c6115d2c22004ad7d3f6d4409367358
 
 ### 3.4.2. SBOM Request  
 (Additional information will be added in due course)  

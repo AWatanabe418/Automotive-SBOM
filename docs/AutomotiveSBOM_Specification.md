@@ -363,7 +363,7 @@ Below is an example of Automotive SBOM expressed in SPDX v2.3 format.
             "Tool: SCA tool (tool name) v0.11.1 (version information)"
         ],
         "created": "2025-01-01T05:55:55Z",
-        "comment": "Type: Build"
+        "comment": "SBOM Type: Build"
     },
     "dataLicense": "CC0-1.0",
     "name": "automotive",

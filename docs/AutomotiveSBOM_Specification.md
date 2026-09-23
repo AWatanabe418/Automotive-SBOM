@@ -3,14 +3,24 @@
 SBOM (Software Bill of Materials, a list of the components that make up software) was defined as a means of visualizing the components of software, and is expected to be used in a variety of industries for risk management purposes such as vulnerability and license compliance. The basic SBOM specification definition published by the NTIA of the United States in 2021 is referenced as the de facto global standard, and there are multiple definitions derived from it, but it is defined generically to cover a variety of areas such as SI (system integration) and embedded device development, and when applied to business practices and development methods specific to the automotive industry, issues arise such as the granularity of information and ambiguity of definitions.
 
 ## 1.2. Objectives of Automotive SBOM
-To solve the above issues, Automotive SBOM is defined as an SBOM standard that follows the general-purpose SBOM specifications but has reconsidered its content specifically for use in the automotive industry. The objectives of Automotive SBOM are as follows:
-- Use as a common standard in the automotive supply chain
-OEMs, as final distributors, are required to carry out various risk management measures to fulfill their safety responsibilities, but this requires that suppliers provide the necessary information accurately and without omission or excess. The Automotive SBOM defines the format, content, and granularity of the information required by OEMs, and by being used as a common guideline for each supplier to create an SBOM that meets the requirements for good products, it will improve transparency and traceability throughout the supply chain.
-- Contributing to improving productivity in the automotive industry
-The Automotive SBOM specifications were created with the intention of being commonly used by OEMs both in Japan and overseas. Currently, because the SBOM specifications required by each OEM differ, suppliers individually create and provide SBOMs tailored to each OEM's requirements, which consumes a lot of person-hours. Standardizing the requirements from OEMs to suppliers will reduce the burden on suppliers in complying with SBOMs and contribute to improving productivity throughout the automotive industry.
-- Use as a requirement specification for tool vendors
-The information that will become the content of SBOM is generally collected from the target software using an SCA tool, but the functionality and performance of the SCA tools currently available in the market are not perfect. Furthermore, selecting the most suitable SCA tool for use in the automotive industry from among the multiple tools available requires desk research, benchmarking, and performance evaluation, which is difficult for each development team at each company to carry out. The Automotive SBOM specification can be used as a means of specifically communicating the requirements for functional enhancements needed in the automotive industry to SCA tool vendors, and as a criterion for each development team to select tools.
 
+The Automotive SBOM is defined as an SBOM standard that follows general-purpose SBOM specifications while addressing the needs and practices of the automotive industry. The objectives of Automotive SBOM are as follows:
+
+### Enable a Common Language Across the Automotive Supply Chain
+
+Automotive SBOM defines a common set of software component information and terminology to facilitate the accurate and consistent exchange of software configuration information among entities participating in the automotive supply chain. By providing a common framework for SBOM creation and exchange, Automotive SBOM improves transparency and traceability across organizational boundaries.
+
+### Contribute to Improved Efficiency and Productivity
+
+Organizations within the automotive supply chain often require SBOMs in different formats and with different levels of detail, resulting in duplicated effort when creating, maintaining, and exchanging SBOMs. By promoting a common set of requirements, Automotive SBOM reduces this burden and contributes to improved efficiency and productivity throughout the industry.
+
+### Support Software Risk Management
+
+Automotive SBOM provides the information necessary to support software risk management activities, including vulnerability management, license compliance, and supply chain transparency. By enabling consistent identification of software components, Automotive SBOM facilitates reliable analysis and response throughout the software lifecycle.
+
+### Provide Requirements for Tool Vendors
+
+SBOM information is typically collected using Software Composition Analysis (SCA) tools, but the capabilities of available tools vary significantly. Automotive SBOM can be used to communicate automotive-specific requirements to tool vendors and to provide development teams with objective criteria for evaluating and selecting SBOM generation and analysis tools.
 <br>
 <br>
 <br>

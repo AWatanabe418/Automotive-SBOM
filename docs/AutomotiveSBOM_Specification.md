@@ -46,7 +46,7 @@ Define operational methods for requesting, generating, and using SBOM
 
 The prerequisite for considering the definition of the Automotive SBOM specification are as follows:
 1. The data field is defined as the minimum data set required to understand the configuration information of the components (OSS, COTS, and proprietary software) contained in the managed software.
-1. Each data field has an attribute of either Required or Optional. Optional data items can be used or not depending on the implementation requirements of each entity.
+1. Each data field has an attribute of either Required or Optional. Required data fields shall be provided in all cases. Optional data fields may be included or omitted depending on the implementation requirements, operational requirements, or use cases of each entity (e.g., companies and organizations participating in the supply chain). The absence of Optional data fields does not affect conformance to this specification, unless otherwise required by industry guidelines, contractual requirements, or organizational policies.
 1. There will be no data fields for dynamic information, such as vulnerability information. Instead, the data fields will contain information necessary to appropriately detect and manage risks associated with the managed software.
    - As a means of detecting associated risks, each component, which is configuration information, is uniquely identified and can be matched with external data.
    - Identify each component's known security vulnerabilities, applicable licenses, and providing entities as a means of detecting associated risks.

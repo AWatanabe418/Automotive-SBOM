@@ -45,7 +45,7 @@ Document format that SBOM files should comply with, definition of each data form
 Define operational methods for requesting, generating, and using SBOM
 
 The prerequisite for considering the definition of the Automotive SBOM specification are as follows:
-1. The data field is defined as the minimum data set required to understand the configuration information of the components (OSS, COTS, proprietary software, and completely in-house developed software) contained in the managed software.
+1. The data field is defined as the minimum data set required to understand the configuration information of the components (OSS, COTS, and proprietary software) contained in the managed software.
 1. Each data field has an attribute of either Required or Optional. Optional data items can be used or not depending on the implementation requirements of each entity.
 1. There will be no data fields for dynamic information, such as vulnerability information. Instead, the data fields will contain information necessary to appropriately detect and manage risks associated with the managed software.
    - As a means of detecting associated risks, each component, which is configuration information, is uniquely identified and can be matched with external data.
@@ -570,9 +570,6 @@ Software whose source code is publicly available and can be used freely by anyon
 Commercially available, off-the-shelf software. COTS software may use OSS, be sold with support and warranties , or be developed using other COTS software.  
 - Proprietary Software  
 In this document, it refers to software that does not fall under either OSS or COTS, such as in-house developed software or contracted development. Proprietary software can be developed using OSS or COTS.  
-- Completely proprietary software  
-In this book, software that does not include COTS or proprietary software and is composed entirely of programs developed entirely independently is called completely proprietary software.  
-
 <br>
 <br>
 <br>

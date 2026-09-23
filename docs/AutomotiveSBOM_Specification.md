@@ -366,6 +366,8 @@ Below is a list of data fields required by existing industry standards that are 
 ### 3.3.1. Document Format Definition  
 Automotive SBOM does not prescribe any specific SBOM document format or version. Any SBOM document format or version may be used, provided that the required data fields defined in Chapter 3.2 can be expressed. At the time of publication, examples of supported formats include SPDX 2.x/3.x and CycloneDX 1.4/1.5/1.6/1.7. Future versions of these formats may also be used without requiring revision of this specification. For smooth SBOM exchange, conformance with both the Automotive SBOM specification and the specification of the chosen SBOM document format is required.  
 
+The objective of Automotive SBOM is to facilitate the accurate and consistent exchange of software configuration information among entities participating in the automotive supply chain. Automotive SBOM provides a common framework for defining the SBOM information to be exchanged, rather than mandating a particular implementation method. Organizations may use manual, automated, or hybrid approaches to create and maintain SBOMs, provided that the resulting SBOM information meets the requirements of this specification.
+
 ![alt text](./images/Figure-3.png)
 Figure 3 Automotive SBOM Document Format
 

@@ -139,10 +139,13 @@ The Automotive SBOM data fields are described below.
 
 ####     2.2  Component Version  
 <ins>Description and Uses</ins>  
-- A version number to identify the version of the component. If unique version of information is not provided, a hash value of the component is used.
+- A unique identifier of the version of the software component.
+- Any versioning scheme may be used, provided that it uniquely identifies the version of the component.
 
 <ins>Specific examples</ins>  
-“ versionInfo ” : “ 1.0.a ”
+"versionInfo": "1.0.0" (Semantic Versioning)  
+"versionInfo": "2025.09" (Calendar Versioning)  
+"versionInfo": "a1b2c3d4e5f67890abcdef1234567890abcdef12" (Git commit hash)
 
 ####     2.3  Component Supplier Name  
 <ins>Description and Uses</ins>  

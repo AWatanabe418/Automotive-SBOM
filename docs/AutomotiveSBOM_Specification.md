@@ -183,6 +183,7 @@ The Automotive SBOM data fields are described below.
 - For OSS components, the name of the organization, foundation, company, or project responsible for maintaining the component should be used.
 - URLs, domain names, package registry names, and source code hosting services should not be used as supplier values unless they are also the organization responsible for maintaining the component.
 - If a component provided by a higher-level supplier is used without modification, the name of the higher-level supplier should be used in this field. If the component has been modified by the supplier of the SBOM Primary Component, the name of the supplier of the SBOM Primary Component should be used in this field. Furthermore, information about the higher-level supplier should be conveyed using the Relationship field.
+- The supplier should be identified whenever possible to support software supply chain traceability and lifecycle management activities. If the supplier cannot be determined after reasonable efforts, the SPDX value "NOASSERTION" may be used. The use of "NOASSERTION" should be limited to exceptional cases.
 
 <ins>Specific examples</ins>  
 "supplier": "Organization : OpenSSL Software Foundation"  

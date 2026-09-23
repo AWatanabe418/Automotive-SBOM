@@ -177,10 +177,12 @@ The Automotive SBOM data fields are described below.
 
 #### 2.3 Component Supplier Name
 <ins>Description and Uses</ins>  
-- Used to identify the organization responsible for providing, maintaining, distributing, or supporting the component.
-- This information supports software supply chain traceability and helps identify the appropriate entity for activities such as vulnerability management, license compliance, and component lifecycle management.
-- For OSS components, this may be the project, foundation, organization, or commercial entity associated with the component.
-- It is not intended to identify intermediary distribution services, source code hosting platforms, or package registries unless they are also the entity responsible for providing the component.
+- Used to identify the organization responsible for providing, maintaining, or distributing the component.
+- This information supports software supply chain traceability and helps identify the appropriate entity for vulnerability management, license compliance, and lifecycle management activities.
+- For COTS or proprietary software, the legal entity name should be used. If necessary, jurisdiction information may be added to distinguish entities with similar names.
+- For OSS components, the name of the organization, foundation, company, or project responsible for maintaining the component should be used.
+- URLs, domain names, package registry names, and source code hosting services should not be used as supplier values unless they are also the organization responsible for maintaining the component.
+- If a component provided by a higher-level supplier is used without modification, the name of the higher-level supplier should be used in this field. If the component has been modified by the supplier of the SBOM Primary Component, the name of the supplier of the SBOM Primary Component should be used in this field. Furthermore, information about the higher-level supplier should be conveyed using the Relationship field.
 
 <ins>Specific examples</ins>  
 "supplier": "Organization : OpenSSL Software Foundation"  

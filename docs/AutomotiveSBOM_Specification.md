@@ -146,7 +146,7 @@ The Automotive SBOM data fields are described below.
 - Expressed using the CISA SBOM Types described in Chapter 6.4.
 
 <ins>Specific examples</ins>  
-" creator comment ": [" SBOM Type : Build "]
+"creator comment": [" SBOM Type : Build "]
 
 ####     1.4  SBOM Primary Component
 <ins>Description and Uses</ins>  
@@ -154,7 +154,8 @@ The Automotive SBOM data fields are described below.
 - Generally, the name of the target software (product, function name, etc.) is assumed, but the project name or various codes (software product number, etc.) within each entity may also be used.
 
 <ins>Specific examples</ins>  
-" name " : "T-Sample" (if using the software name), " xxxxx-xxxxx " (if using the software model number)
+"name": "T-Sample" (if using the software name)  
+"name": "xxxxx-xxxxx" (if using the software model number)
 
 #### 2  Component Attributes  
 ####     2.1  Component Name  
@@ -163,7 +164,8 @@ The Automotive SBOM data fields are described below.
 - Generally, the name of the target software (product, function name, etc.) is assumed, but the project name or various codes (software product number, etc.) within each entity may also be used.  
 
 <ins>Specific examples</ins>  
-" name " : "A-Component " ( if using the function name), " xxxxx-xxxxx " ( if using the software part number)
+"name": "A-Component " ( if using the function name)  
+"name": "xxxxx-xxxxx" ( if using the software part number)
 
 ####     2.2  Component Version  
 <ins>Description and Uses</ins>  
@@ -204,12 +206,11 @@ The Automotive SBOM data fields are described below.
 - The completeness of the relationship expression can also be expressed using Unknown, None, Partial, and Known.  
 
 <ins>Specific examples</ins>  
-"Relationship: SPDXRef-2b9b148e-fb5e-3079-2f88-d5e9f39431dc CONTAINS SPDXRef-9811def5-4723-5e3f-2dbd-8c33c9ff62ae"
+"Relationship": "SPDXRef-2b9b148e-fb5e-3079-2f88-d5e9f39431dc CONTAINS SPDXRef-9811def5-4723-5e3f-2dbd-8c33c9ff62ae"
 
 #### 2.5 Component Unique Identifier
 
-Description and Uses
-
+<ins>Description and Uses</ins>  
 - Used to uniquely identify a component and enable association with relevant external information.
 - The identifier shall support consistent identification of the component across entities participating in the supply chain.
 - For OSS components, the use of commonly recognized identifiers (e.g., PURL ([Package-URL](https://ecma-international.org/publications-and-standards/standards/ecma-427/)), CPE ([Common Platform Enumeration](https://cpe.mitre.org/specification/index.html)), SWID ([Software Identification](https://csrc.nist.gov/projects/software-identification-swid/guidelines)), Tagging ([ISO/IEC 19770-2:2015](https://www.iso.org/standard/65666.html)), and SWHID ([Software Hash Identifier](https://www.softwareheritage.org/software-hash-identifier-swhid/)) ([ISO/IEC 18670:2025](https://www.iso.org/standard/89985.html))) is recommended whenever available. In particular, providing at least one of CPE 2.2, CPE 2.3, or PURL is recommended to facilitate correlation with vulnerability databases and vulnerability management tools.
@@ -219,14 +220,14 @@ Description and Uses
 "cpe": "cpe:2.3:a:systembom:bomviewer:3.2.1"  
 "purl": "pkg:rpm/sysbom/bomgen"  
 "swid ": "65699569-EA51-4346-8BDC - 4076FA5C0E72"  
-"swhid": "swh:1:dir:bc7ddd62cf3d72ffdc365e1bf2dea6eeaa44e185;origin=https://github.com/rdicosmo/parmap;visit=swh:1:snp:8ddca416836fbbc2a7704c69db38739bef6b 6cae;anchor=swh:1:rev:ecd3744ed558da4ea2bf9eb87b80b8949f417126 "
+"swhid": "swh:1:dir:bc7ddd62cf3d72ffdc365e1bf2dea6eeaa44e185;origin=https://github.com/rdicosmo/parmap;visit=swh:1:snp:8ddca416836fbbc2a7704c69db38739bef6b 6cae;anchor=swh:1:rev:ecd3744ed558da4ea2bf9eb87b80b8949f417126"
 
 ####     2.6  Component File Name  
 <ins>Description and Uses</ins>  
 - The file name of the component, used to identify the component and check its license.  
 
 <ins>Specific examples</ins>  
-“ PackageFileName ” : “ B.exe ”  
+“PackageFileName”: “B.exe”  
 
 ####     2.7  Component Download Location  
 <ins>Description and Uses</ins>  
@@ -234,8 +235,9 @@ Description and Uses
 - If the component is open source, use the URL to obtain the source code or binary file of the component being used. A URL that can obtain a version of the component being used is preferable, but it can also be substituted with the URL of the top page of the Github repository or the download link on the project's web page.  
 - If the component is COTS or proprietary , use "None" .  
 
-Specific examples  
-“ PackageDownloadLocation ” : “ http://acompany/a.zip ” , “ None ”  
+<ins>Specific examples</ins>  
+"PackageDownloadLocation": "`http://acompany/a.zip`"
+“PackageDownloadLocation”: “None”  
 
 ####     2.8  Component Declared License  
 <ins>Description and Uses</ins>  
@@ -245,8 +247,8 @@ Specific examples
 - This item is optional, and NONE is allowed if there is no declaration by the component creator, and NOASSERTION is allowed if it is unknown.  
 - NOASSERTION may be used when declared license information is unavailable, cannot be reasonably determined, or is intentionally not provided, consistent with SPDX semantics. However, the use of NOASSERTION is expected to be limited to such exceptional cases. Whenever reasonably possible, explicit license information should be provided. Because Concluded License is required by Automotive SBOM, the use of NOASSERTION in this field does not indicate that license assessment has not been performed.
 
-Specific examples  
-" licenseDeclared ":" ( LGPL-2.0-only AND LicenseRef-3 ) "  
+<ins>Specific examples</ins>  
+"licenseDeclared": "(LGPL-2.0-only AND LicenseRef-3)"  
 
 ####     2.9  Component Concluded License  
 <ins>Description and Uses</ins>  
@@ -254,16 +256,16 @@ Specific examples
 - The Concluded License in the SPDX specification is an optional item, but it is a required item in the Automotive SBOM . If the license is unknown or ambiguous, it is the responsibility of the SBOM creator, who is the entity distributing the target component , to identify the license.  
 - To identify an OSS license, use the SPDX license identifier , but if one is not defined, use the name of the license as is.  
 
-Specific examples  
-" licenseConcluded ":"Apache-2.0"  
+<ins>Specific examples</ins>  
+"licenseConcluded": "Apache-2.0"  
 
 ####     2.10  Component Cryptographic Hash  
 <ins>Description and Uses</ins>  
 - A hash value of the component, using SHA-256 or higher algorithm.  
 - It is used for purposes such as preventing tampering and verifying authenticity.  
 
-Specific examples  
-“FileChecksum”:”SHA256: 5254c46a631572156bd94d61649f8fb30473c150232d28489f88e1d99950b5a8”  
+<ins>Specific examples</ins>  
+“FileChecksum”: ”SHA256:5254c46a631572156bd94d61649f8fb30473c150232d28489f88e1d99950b5a8”  
 
 ####     2.11  Component Copyright Notice  
 <ins>Description and Uses</ins>  
@@ -271,15 +273,15 @@ Specific examples
 - The value should contain the copyright notice provided by the component author, copyright holder, or supplier.
 - If the copyright information is unavailable, cannot be reasonably determined, or is intentionally not provided, NOASSERTION may be used in accordance with SPDX semantics. Whenever reasonably possible, explicit copyright information should be provided.
 
-Specific examples  
-" copyrightText ":"The Apache Software Foundation"
+<ins>Specific examples</ins>  
+"copyrightText ":"The Apache Software Foundation"
 
 ####     2.12  Component External Document References  
 <ins>Description and Uses</ins>  
 - If the component is expressed using a different SBOM (file), information to identify that SBOM (file).  
 
-Specific examples  
-“ ExternalDocumentRef ”:”DocmentRef-B-Component SBOM http://www.b.sbom SHA256: e3599f715db5acb8b37f132c5610005d5b849763bc748b2260bc939c225c4342”  
+<ins>Specific examples</ins>  
+“ExternalDocumentRef”: ”DocumentRef-B-Component SBOM `http://www.b.sbom` SHA256: e3599f715db5acb8b37f132c5610005d5b849763bc748b2260bc939c225c4342”  
 
 ---
 

@@ -592,7 +592,7 @@ B-Component SBOM file
 ### 3.4.4. Operational Methods for Using SBOM  
 (Additional information will be added in due course)  
 
-### 3.4.5 Use of SBOM Information for Vulnerability Management
+### 3.4.5. Use of SBOM Information for Vulnerability Management
 
 One of the important applications of Automotive SBOM is vulnerability management throughout the automotive software supply chain and vehicle lifecycle.
 
@@ -603,6 +603,19 @@ Organizations can use this information to determine whether software components 
 The primary purpose of Automotive SBOM is to identify software components and their relationships. Automotive SBOM does not define vulnerability assessment procedures, vulnerability reporting processes, exploitability analysis methods, or remediation activities. Such activities may be managed through organizational vulnerability management processes, Product Security Incident Response Team (PSIRT) activities, VEX documents, or other complementary mechanisms.
 
 By providing a common set of software component identification information, Automotive SBOM can facilitate consistent vulnerability management activities across organizations while remaining independent of any specific vulnerability management process, tool, or workflow.
+
+### 3.4.6. Use of Concluded License Information
+
+Concluded License information can support license compliance activities by representing the license determination associated with a software component.
+
+In some cases, the license associated with a software component can be identified automatically from source files, package metadata, or other available information. However, license determination may also require human review when multiple license notices exist, licensing information is incomplete, or the applicable license obligations are unclear.
+
+The process used to determine Concluded License information may vary among organizations. Such activities may involve open source compliance teams, legal specialists, engineering teams, or other organizational functions responsible for software compliance.
+
+Automotive SBOM does not prescribe how Concluded License information is generated, reviewed, approved, or maintained. The purpose of Automotive SBOM is to provide a consistent mechanism for exchanging concluded license information when it is available.
+
+Organizations may use automated, manual, or hybrid approaches to establish and maintain Concluded License information depending on their tools, processes, and compliance requirements.
+
 <br>
 <br>
 <br>

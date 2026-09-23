@@ -45,26 +45,42 @@ Figure 2 Post-shipment Traceability Management 
 <br>
 
 # 3. Automotive SBOM Specifications
-## 3.1. Automotive SBOM Specification Configuration
+# 3.1. Automotive SBOM Specification Configuration
+
 The Automotive SBOM specification consists of the following definitions:
-- Data Fields
-Definition of data items to be handled as SBOM
-- Automation Support
-Document format that SBOM files should comply with, definition of each data format, and implementation example
-- Practice and Process
-Define operational methods for requesting, generating, and using SBOM
 
-The prerequisite for considering the definition of the Automotive SBOM specification are as follows:
-1. The data field is defined as the minimum data set required to understand the configuration information of the components (OSS, COTS, and proprietary software) contained in the managed software.
-1. Each data field has an attribute of either Required or Optional. Required data fields shall be provided in all cases. Optional data fields may be included or omitted depending on the implementation requirements, operational requirements, or use cases of each entity (e.g., companies and organizations participating in the supply chain). The absence of Optional data fields does not affect conformance to this specification, unless otherwise required by industry guidelines, contractual requirements, or organizational policies.
-1. There will be no data fields for dynamic information, such as vulnerability information. Instead, the data fields will contain information necessary to appropriately detect and manage risks associated with the managed software.
-   - As a means of detecting associated risks, each component, which is configuration information, is uniquely identified and can be matched with external data.
-   - Identify each component's known security vulnerabilities, applicable licenses, and providing entities as a means of detecting associated risks.
-1. There will be no data fields for managing entity-specific information, such as model information. This information will be defined separately as an implementation requirement for each entity as a schema outside the SBOM.
+* Data Fields
+  Definition of data items to be handled as SBOM.
 
-The reasons for not simply adopting existing industry standards are as follows:
-- Standards such as CISA Baseline Attribute, NTIA Minimum Elements, and BSI TR-03183 do not support data items used by automotive OEM intellectual property departments for license verification, such as the URL of the component source and whether it has been modified. The same applies to the definition of minimum SBOM elements by J-Auto-ISAC(Document Number: [JAI-C00-0001](https://j-auto-isac.or.jp/documents/)).
-- The OpenChain Telco SBOM Guide Version 1.1 is SPDX-based, and restricting the SBOM document format may not be consistent with automotive industry practices.
+* Automation Support
+  Document formats that SBOM files should comply with, definitions of each data format, and implementation examples.
+
+* Practice and Process
+  Operational methods for requesting, generating, exchanging, and using SBOMs.
+
+The Automotive SBOM specification is intended to support the accurate and consistent exchange of software configuration information throughout the automotive supply chain. It also supports software risk management activities, including vulnerability management, license compliance, and supply chain traceability.
+
+The prerequisites for defining the Automotive SBOM specification are as follows:
+
+1. Data fields are defined as the minimum set of information required to identify and understand the software components contained in managed software.
+
+2. Each data field has an attribute of either Required or Optional. Required data fields shall be provided in all cases. Optional data fields may be included or omitted depending on the implementation requirements, operational requirements, or use cases of each entity. The absence of Optional data fields does not affect conformance to this specification unless otherwise required by industry guidelines, contractual requirements, or organizational policies.
+
+3. There shall be no data fields for dynamic information, such as vulnerability information. Instead, the data fields shall contain information necessary to identify software components and support risk management activities.
+   * Components shall be uniquely identifiable and capable of being matched with external sources of information.
+   * Data fields shall support the identification of known vulnerabilities, applicable licenses, and software suppliers through external data sources.
+
+4. There shall be no data fields for entity-specific business information, such as vehicle model information. Such information shall be defined separately as implementation-specific schemas outside the scope of this specification.
+
+The relationship between Automotive SBOM and existing industry standards is as follows:
+
+* Standards such as CISA Baseline Attributes, NTIA Minimum Elements, and BSI TR-03183 provide a useful foundation for defining SBOM requirements. Automotive SBOM builds upon these standards to support the needs of the automotive industry.
+
+* In addition to commonly used SBOM data fields, Automotive SBOM defines additional requirements and guidance needed to support software risk management, license compliance activities, and the accurate and consistent exchange of software configuration information throughout the automotive supply chain.
+
+* The OpenChain Telco SBOM Guide Version 1.1 is based on SPDX. Automotive SBOM supports mappings to SPDX and other SBOM formats while avoiding restrictions to a single SBOM document format in order to accommodate diverse automotive industry practices.
+
+* Automotive SBOM is intended to evolve together with the needs of the automotive industry. Future revisions may introduce additional automotive-specific requirements, data fields, and representation methods as industry practices, regulations, and software supply chain requirements continue to evolve.
 
 ## 3.2. Data Fields
 ### 3.2.1. Data Field Definitions

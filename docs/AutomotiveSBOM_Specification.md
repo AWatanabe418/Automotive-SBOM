@@ -778,13 +778,24 @@ Because software may be provided under a choice of more than one license, or bec
 <br>
 <br>
 
-# 7. Appendix (External Materials)  
-- sbom_minimum_elements_report.pdf  
-- Framing Software Component Transparency (2024) | CISA  
-- Technical Guideline TR-03183: Cyber Resilience Requirements for Manufacturers and Products  
-- Types of Software Bill of Materials (SBOM) | CISA  
-- Cybersecurity Best Practices for the Safety of Modern Vehicles, Updated 2022  
+  # 7. Appendix (External Materials)  
+- 2021 The Minimum Elements For a Software Bill of Materials (SBOM)  
+  https://www.ntia.gov/report/2021/minimum-elements-software-bill-materials-sbom
 
+- 2026 Minimum Elements for a Software Bill of Materials (SBOM)
+  https://www.cisa.gov/resources-tools/resources/2026-minimum-elements-software-bill-materials-sbom
+
+- Framing Software Component Transparency (2024)
+  https://www.cisa.gov/resources-tools/resources/framing-software-component-transparency-2024
+
+- Technical Guideline TR-03183: Cyber Resilience Requirements for Manufacturers and Products  
+  https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/Technische-Richtlinien/TR-nach-Thema-sortiert/tr03183/TR-03183_node.html
+
+- Types of Software Bill of Materials (SBOM)
+  https://www.cisa.gov/resources-tools/resources/types-software-bill-materials-sbom
+
+- Cybersecurity Best Practices for the Safety of Modern Vehicles (2022)  
+  https://www.transportation.gov/regulations/federal-register-documents/2022-19507
 <br>
 <br>
 <br>

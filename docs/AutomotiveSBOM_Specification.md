@@ -74,7 +74,7 @@ The prerequisites for defining the Automotive SBOM specification are as follows:
 
 The relationship between Automotive SBOM and existing industry standards is as follows:
 
-* Standards such as CISA Baseline Attributes, NTIA Minimum Elements, and BSI TR-03183 provide a useful foundation for defining SBOM requirements. Automotive SBOM builds upon these standards to support the needs of the automotive industry.
+* Standards such as CISA Baseline Attributes, NTIA Minimum Elements, BSI TR-03183, and the 2026 Minimum Elements for a Software Bill of Materials (SBOM) provide a useful foundation for defining SBOM requirements. Automotive SBOM builds upon these standards to support the needs of the automotive industry.
 
 * In addition to commonly used SBOM data fields, Automotive SBOM defines additional requirements and guidance needed to support software risk management, license compliance activities, and the accurate and consistent exchange of software configuration information throughout the automotive supply chain.
 
@@ -316,26 +316,26 @@ Specific examples
 The results of the consistency check against the definitions of data fields in existing industry standards are shown in Table 2.  
 
 Table 2 The Results of the Consistency Check  
-|#|Automotive SBOM Data Fields|CISA Baseline Attribute|NTIA Minimum Elements|BSI TR-03183|J-Auto-ISAC SBOM minimum element|
-|:--:|:--|:--:|:--:|:--:|:--:|
+|#|Automotive SBOM Data Fields|CISA Baseline Attribute|NTIA Minimum Elements|BSI TR-03183|J-Auto-ISAC SBOM minimum element|2026 Minimum Elements|
+|:--:|:--|:--:|:--:|:--:|:--:|:--:|
 |1|SBOM Metadata|
-|1-1|SBOM Author Name|■|■|■|■|
-|1-2|SBOM Timestamp|■|■|■|■|
-|1-3|SBOM Type|■|(□)|-|-|
-|1-4|SBOM Primary Component|■|-|-|-|
+|1-1|SBOM Author Name|■|■|■|■|■|
+|1-2|SBOM Timestamp|■|■|■|■|■|
+|1-3|SBOM Type|■|(□)|-|-|■|
+|1-4|SBOM Primary Component|■|-|-|-|-|
 |2|Component attribute|
-|2-1|Component Name|■|■|■|■|
-|2-2|Component Version|■|■|■|■|
-|2-3|Component Supplier Name|■|■|■|■|
-|2-4|Component Relationship|■|■|■|■|
-|2-5|Component Unique Identifier|■|■|■|■|
-|2-6|Component File Name|-|-|■|-|
-|2-7|Component Download Location|-|-|-|-|
-|2-8|Component Declared License|■|-|□|-|
-|2-9|Component Concluded License|-|□|■|□|
-|2-10|Component Cryptographic Hash|■|□|□|□|
-|2-11|Component Copyright Notice|■|-|-|-|
-|2-12|Component External Document References|-|-|-|□|
+|2-1|Component Name|■|■|■|■|■|
+|2-2|Component Version|■|■|■|■|■|
+|2-3|Component Supplier Name|■|■|■|■|■|
+|2-4|Component Relationship|■|■|■|■|■|
+|2-5|Component Unique Identifier|■|■|■|■|■|
+|2-6|Component File Name|-|-|■|-|-|
+|2-7|Component Download Location|-|-|-|-|-|
+|2-8|Component Declared License|■|-|□|-|□|
+|2-9|Component Concluded License|-|□|■|□|■|
+|2-10|Component Cryptographic Hash|■|□|□|□|■|
+|2-11|Component Copyright Notice|■|-|-|-|-|
+|2-12|Component External Document References|-|-|-|□|-|
   
 (Legend: ■: Required, □: Additional or Optional, - :  Not applicable)  
 
@@ -361,6 +361,37 @@ Below is a list of data fields required by existing industry standards that are 
     This can be replaced by the Component Download Location .  
 - J-Auto-ISAC　SBOM minimum element  
   All are supported.  
+* 2026 Minimum Elements for a Software Bill of Materials (SBOM)
+
+  - Component License  
+    License verification is possible through the Component Declared License and Component Concluded License.
+
+  - Component Hash Value  
+    Because it can be replaced by Component Cryptographic Hash.
+
+  - Component Hash Algorithm  
+    Because the algorithm is included as part of Component Cryptographic Hash.
+
+  - SBOM Generation Context  
+    Can be partially represented by SBOM Type.
+
+  - SBOM Author Signature  
+    This is currently outside the scope of Automotive SBOM Version 1.0.
+
+  - SBOM Tool Name  
+    This is currently outside the scope of Automotive SBOM Version 1.0.
+
+  - SBOM Tool Version  
+    This is currently outside the scope of Automotive SBOM Version 1.0.
+
+  - SBOM Version  
+    This is currently outside the scope of Automotive SBOM Version 1.0.
+
+  - SBOM Data Format Name  
+    This is currently outside the scope of Automotive SBOM Version 1.0(typically provided by the underlying SBOM format, such as SPDX or CycloneDX).
+
+  - SBOM Data Format Version  
+    This is currently outside the scope of Automotive SBOM Version 1.0(typically provided by the underlying SBOM format, such as SPDX or CycloneDX).
 
 ## 3.3. Automation Support  
 ### 3.3.1. Document Format Definition  

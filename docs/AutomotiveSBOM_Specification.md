@@ -243,6 +243,7 @@ Specific examples
 - License information not provided by the package author, such as license information from a third-party repository, should be expressed in #2.9 Component Concluded License rather than in this field.  
 - To identify an OSS license, use the SPDX license identifier , but if one is not defined, use the name of the license as is.  
 - This item is optional, and NONE is allowed if there is no declaration by the component creator, and NOASSERTION is allowed if it is unknown.  
+- NOASSERTION may be used when declared license information is unavailable, cannot be reasonably determined, or is intentionally not provided, consistent with SPDX semantics. However, the use of NOASSERTION is expected to be limited to such exceptional cases. Whenever reasonably possible, explicit license information should be provided. Because Concluded License is required by Automotive SBOM, the use of NOASSERTION in this field does not indicate that license assessment has not been performed.
 
 Specific examples  
 " licenseDeclared ":" ( LGPL-2.0-only AND LicenseRef-3 ) "  

@@ -589,6 +589,17 @@ B-Component SBOM file
 ### 3.4.4. Operational Methods for Using SBOM  
 (Additional information will be added in due course)  
 
+### 3.4.5 Use of SBOM Information for Vulnerability Management
+
+One of the important applications of Automotive SBOM is vulnerability management throughout the automotive software supply chain and vehicle lifecycle.
+
+Automotive SBOM can support vulnerability management by providing software component identification information. Information such as component names, versions, Package URL (PURL), Common Platform Enumeration (CPE), cryptographic hash values, and supplier information can be used to correlate software components with vulnerability information obtained from external sources.
+
+Organizations can use this information to determine whether software components contained in an Automotive SBOM are affected by known vulnerabilities. Vulnerability information may be obtained from vulnerability databases, security advisories, Vulnerability Exploitability eXchange (VEX) documents, or other vulnerability intelligence sources.
+
+The primary purpose of Automotive SBOM is to identify software components and their relationships. Automotive SBOM does not define vulnerability assessment procedures, vulnerability reporting processes, exploitability analysis methods, or remediation activities. Such activities may be managed through organizational vulnerability management processes, Product Security Incident Response Team (PSIRT) activities, VEX documents, or other complementary mechanisms.
+
+By providing a common set of software component identification information, Automotive SBOM can facilitate consistent vulnerability management activities across organizations while remaining independent of any specific vulnerability management process, tool, or workflow.
 <br>
 <br>
 <br>

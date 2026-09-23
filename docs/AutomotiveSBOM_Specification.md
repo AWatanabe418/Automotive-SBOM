@@ -210,10 +210,10 @@ The Automotive SBOM data fields are described below.
 
 Description and Uses
 
-* Used to uniquely identify a component and enable association with relevant external information.
-* The identifier shall support consistent identification of the component across entities participating in the supply chain.
-* For OSS components, the use of commonly recognized identifiers (e.g., PURL ([Package-URL](https://ecma-international.org/publications-and-standards/standards/ecma-427/)), CPE ([Common Platform Enumeration](https://cpe.mitre.org/specification/index.html)), SWID ([Software Identification](https://csrc.nist.gov/projects/software-identification-swid/guidelines)), Tagging ([ISO/IEC 19770-2:2015](https://www.iso.org/standard/65666.html)), and SWHID ([Software Hash Identifier](https://www.softwareheritage.org/software-hash-identifier-swhid/)) ([ISO/IEC 18670:2025](https://www.iso.org/standard/89985.html))) is recommended whenever available.
-* Where such identifiers are not available, alternative identifiers may be used, provided that they uniquely identify the component and support consistent identification of the component across organizations exchanging the SBOM.
+- Used to uniquely identify a component and enable association with relevant external information.
+- The identifier shall support consistent identification of the component across entities participating in the supply chain.
+- For OSS components, the use of commonly recognized identifiers (e.g., PURL ([Package-URL](https://ecma-international.org/publications-and-standards/standards/ecma-427/)), CPE ([Common Platform Enumeration](https://cpe.mitre.org/specification/index.html)), SWID ([Software Identification](https://csrc.nist.gov/projects/software-identification-swid/guidelines)), Tagging ([ISO/IEC 19770-2:2015](https://www.iso.org/standard/65666.html)), and SWHID ([Software Hash Identifier](https://www.softwareheritage.org/software-hash-identifier-swhid/)) ([ISO/IEC 18670:2025](https://www.iso.org/standard/89985.html))) is recommended whenever available.
+- For components for which such identifiers are not available, including proprietary or commercial components, alternative identifiers may be used, provided that they uniquely identify the component and support consistent identification of the component across organizations exchanging the SBOM.
 
 <ins>Specific examples</ins>  
 "cpe": "cpe:2.3:a:systembom:bomviewer:3.2.1"  

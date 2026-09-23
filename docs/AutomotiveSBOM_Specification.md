@@ -21,6 +21,34 @@ Automotive SBOM provides the information necessary to support software risk mana
 ### Provide Requirements for the SBOM Tool Ecosystem
 
 SBOM information is typically collected and managed using a variety of tools and platforms, but the capabilities of available solutions vary significantly. Automotive SBOM can be used to communicate automotive-specific requirements to the broader SBOM tool ecosystem, including commercial vendors, open source projects, and platform providers. It also provides development teams with objective criteria for evaluating and selecting SBOM generation, management, and analysis solutions.
+
+### 1.3 Automotive-Specific Use Cases
+
+While SBOM concepts are applicable across many industries, the automotive industry has several unique characteristics that influence how SBOM information is created, exchanged, maintained, and utilized. These characteristics include complex multi-tier supply chains, long product lifecycles, ECU-based software architectures, functional safety requirements, and the need for coordinated vulnerability management across multiple stakeholders.
+
+The following examples illustrate representative scenarios in which Automotive SBOM information can provide value. These examples are not intended to be exhaustive, but rather to demonstrate key motivations for establishing a common Automotive SBOM Framework.
+
+#### Collecting SBOMs Across All Supply Chain Tiers
+
+Modern vehicles are developed through highly complex supply chains involving OEMs and suppliers across multiple tiers of the automotive supply chain. Software components delivered by different organizations may ultimately become part of a single vehicle system. Automotive SBOM information can facilitate the collection and management of SBOMs across multiple supply chain tiers, enabling greater visibility into the software composition of vehicle systems and supporting downstream cybersecurity and compliance activities.
+
+#### Long-Term Lifecycle Management
+
+Vehicles often remain in operation for ten years or longer after production. During that period, organizations may need to maintain software, address newly discovered vulnerabilities, provide software updates, and respond to regulatory requirements. Automotive SBOM information can support long-term lifecycle management by providing a consistent record of software components and their relationships throughout the operational lifetime of a vehicle.
+
+#### ECU-Level Configuration Tracking
+
+A vehicle typically contains numerous Electronic Control Units (ECUs), each of which may operate different software stacks, software versions, and configuration variants. Automotive SBOM information can be used to identify and manage the software composition of individual ECUs and vehicle configurations, supporting software inventory management, change tracking, and impact analysis activities.
+
+#### Alignment with Functional Safety Requirements
+
+Software updates intended to address cybersecurity concerns may also need to be evaluated from a functional safety perspective. Understanding which software components are affected by a proposed change is important for assessing both cybersecurity and safety impacts. Automotive SBOM information can provide visibility into software dependencies and component relationships, supporting activities performed in conjunction with functional safety frameworks such as ISO 26262.
+
+#### Integration with VEX and PSIRT Operations
+
+Organizations increasingly use SBOM information as an input to vulnerability management processes. When combined with Vulnerability Exploitability eXchange (VEX) information, SBOM data can assist organizations in determining whether identified vulnerabilities affect specific vehicle software configurations. Automotive SBOM information can also support Product Security Incident Response Team (PSIRT) activities, including vulnerability assessment, prioritization, communication, and remediation planning across the automotive ecosystem.
+
+These examples are not intended to be exhaustive. Rather, they illustrate representative scenarios that motivated the development of this Automotive SBOM Framework and demonstrate how SBOM information can be used throughout the automotive software supply chain and vehicle lifecycle.  
 <br>
 <br>
 <br>

@@ -175,16 +175,18 @@ The Automotive SBOM data fields are described below.
 "versionInfo": "2025.09" (Calendar Versioning)  
 "versionInfo": "a1b2c3d4e5f67890abcdef1234567890abcdef12" (Git commit hash)
 
-####     2.3  Component Supplier Name  
+#### 2.3 Component Supplier Name
 <ins>Description and Uses</ins>  
-- A name that uniquely identifies the entity providing the component. If the company name has changed since the SBOM was created due to a merger or acquisition, the content of this item will be changed when the SBOM is updated.
-- If the component is COTS or proprietary software, the legal entity name should be used in this field. If the legal entity name is not unique, jurisdiction information may be added.
-- If the component is OSS, this field should contain the name of the OSS project. If possible, add the name of the organization hosting the project (e.g., Apache Tomcat ). The OSS copyright statement may be used to identify the project name (e.g., " Meta Platforms, Inc. and affiliates" ).
-- If it is difficult to identify the supplier, you may use the domain URL or namespace information of the PURL of the software in question. The use of " unknown " is also permitted, but it is recommended that you do not use it too often.
--If a component provided by a higher-level supplier is used without modification, the name of the higher-level supplier should be used in this field. If the component has been modified by the supplier of the SBOM Primary Component , the name of the supplier of the SBOM Primary Component should be used in this field. Furthermore, information about the higher-level supplier should be conveyed using the Relationship field ( see Chapter 6.3 for details).
+- Used to identify the organization responsible for providing, maintaining, distributing, or supporting the component.
+- This information supports software supply chain traceability and helps identify the appropriate entity for activities such as vulnerability management, license compliance, and component lifecycle management.
+- For OSS components, this may be the project, foundation, organization, or commercial entity associated with the component.
+- It is not intended to identify intermediary distribution services, source code hosting platforms, or package registries unless they are also the entity responsible for providing the component.
 
 <ins>Specific examples</ins>  
-"supplier": "Organization : B -Company "
+"supplier": "Organization : OpenSSL Software Foundation"  
+"supplier": "Organization : The Apache Software Foundation"  
+"supplier": "Organization : Microsoft Corporation"  
+"supplier": "Organization : B -Company "  
 
 ####     2.4  Component Relationship  
 <ins>Description and Uses</ins>  

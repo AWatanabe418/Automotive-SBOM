@@ -104,7 +104,10 @@ The Automotive SBOM data fields are described below.
 ####     1.2  SBOM Timestamp
 <ins>Description and Uses</ins>  
 - Used to identify the date and time the SBOM was created or updated.
-- Be represented in a format that is consistent across time zones and locales (e.g., ISO 8601-1).
+- Shall be represented in UTC using the ISO 8601 format `YYYY-MM-DDThh:mm:ssZ` to ensure consistency across time zones and locales.
+- The year shall be represented using four decimal digits. The month, day, hour, minute, and second shall each be represented using two decimal digits with leading zeros as necessary.
+- The time shall be expressed in 24-hour notation.
+- Fractional seconds shall not be included.
 
 <ins>Specific examples</ins>  
 "created": "2025-01-24T22:31:37Z"

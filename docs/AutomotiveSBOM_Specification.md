@@ -24,9 +24,9 @@ SBOM information is typically collected and managed using a variety of tools and
 
 ### 1.3 Automotive-Specific Use Cases
 
-While SBOM concepts are applicable across many industries, the automotive industry has several unique characteristics that influence how SBOM information is created, exchanged, maintained, and utilized. These characteristics include complex multi-tier supply chains, long product lifecycles, ECU-based software architectures, functional safety requirements, and the need for coordinated vulnerability management across multiple stakeholders.
+While SBOM concepts are applicable across many industries, the automotive industry has several unique characteristics that influence how SBOM information is created, exchanged, maintained, and utilized. These characteristics include complex multi-tier supply chains, long product lifecycles, ECU-based software architectures, software configurations consisting of open source, commercial, and proprietary software components, functional safety requirements, and the need for coordinated vulnerability management across multiple stakeholders.
 
-The following examples illustrate representative scenarios in which Automotive SBOM information can provide value. These examples are not intended to be exhaustive, but rather to demonstrate key motivations for establishing a common Automotive SBOM Framework.
+The following examples illustrate representative scenarios in which Automotive SBOM information can provide value. These examples are not intended to be exhaustive, but rather to demonstrate key motivations for establishing a common Automotive SBOM Framework and managing software configurations consistently across the automotive software supply chain and vehicle lifecycle.
 
 #### Collecting SBOMs Across All Supply Chain Tiers
 
@@ -49,6 +49,14 @@ Software updates intended to address cybersecurity concerns may also need to be 
 Organizations increasingly use SBOM information as an input to vulnerability management processes. When combined with Vulnerability Exploitability eXchange (VEX) information, SBOM data can assist organizations in determining whether identified vulnerabilities affect specific vehicle software configurations. Automotive SBOM information can also support Product Security Incident Response Team (PSIRT) activities, including vulnerability assessment, prioritization, communication, and remediation planning across the automotive ecosystem.
 
 These examples are not intended to be exhaustive. Rather, they illustrate representative scenarios that motivated the development of this Automotive SBOM Framework and demonstrate how SBOM information can be used throughout the automotive software supply chain and vehicle lifecycle.  
+
+#### Management of Proprietary Software Components
+
+Automotive software systems typically consist of a combination of open source software, commercial off-the-shelf (COTS) software, and proprietary software developed by OEMs and suppliers.
+
+Organizations may wish to manage all software components using a common framework rather than maintaining separate processes for different software types. In particular, proprietary software component information can support software inventory management, configuration tracking, impact analysis, software update planning, and vulnerability management activities.
+
+Automotive SBOM can provide a common mechanism for identifying and managing software components regardless of their origin, enabling a more complete understanding of vehicle software configurations throughout the automotive supply chain and vehicle lifecycle.
 <br>
 <br>
 <br>

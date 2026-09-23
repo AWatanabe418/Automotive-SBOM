@@ -58,6 +58,7 @@ The reasons for not simply adopting existing industry standards are as follows:
 
 ## 3.2. Data Fields
 ### 3.2.1. Data Field Definitions
+The Automotive SBOM data fields are selected to facilitate the accurate and consistent exchange of software configuration information among entities participating in the automotive supply chain, support vulnerability and license management activities, and improve transparency and traceability throughout the supply chain. The data fields represent the minimum information required to achieve these objectives. The rationale and intended use of each data field are described in the following sections.  
 The Automotive SBOM data field definitions are shown in Table 1.
 
 Table 1 Automotive SBOM Data Field Definitions

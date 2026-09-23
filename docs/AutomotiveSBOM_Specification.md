@@ -267,8 +267,9 @@ Specific examples
 
 ####     2.11  Component Copyright Notice  
 <ins>Description and Uses</ins>  
-- The copyright notice is attached to the component.  
-- Setting this item is mandatory for SBOM Primary Component. For other components, it is optional (NOASSERTION is allowed).  
+- Copyright notice associated with the component.  
+- The value should contain the copyright notice provided by the component author, copyright holder, or supplier.
+- If the copyright information is unavailable, cannot be reasonably determined, or is intentionally not provided, NOASSERTION may be used in accordance with SPDX semantics. Whenever reasonably possible, explicit copyright information should be provided.
 
 Specific examples  
 " copyrightText ":"The Apache Software Foundation"

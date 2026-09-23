@@ -18,9 +18,9 @@ Organizations within the automotive supply chain often require SBOMs in differen
 
 Automotive SBOM provides the information necessary to support software risk management activities, including vulnerability management, license compliance, and supply chain transparency. By enabling consistent identification of software components, Automotive SBOM facilitates reliable analysis and response throughout the software lifecycle.
 
-### Provide Requirements for Tool Vendors
+### Provide Requirements for the SBOM Tool Ecosystem
 
-SBOM information is typically collected using Software Composition Analysis (SCA) tools, but the capabilities of available tools vary significantly. Automotive SBOM can be used to communicate automotive-specific requirements to tool vendors and to provide development teams with objective criteria for evaluating and selecting SBOM generation and analysis tools.
+SBOM information is typically collected and managed using a variety of tools and platforms, but the capabilities of available solutions vary significantly. Automotive SBOM can be used to communicate automotive-specific requirements to the broader SBOM tool ecosystem, including commercial vendors, open source projects, and platform providers. It also provides development teams with objective criteria for evaluating and selecting SBOM generation, management, and analysis solutions.
 <br>
 <br>
 <br>

@@ -279,7 +279,7 @@ The Automotive SBOM data fields are described below.
 ```
 
 ```json
-"supplier": "B - Company"
+"supplier": "B-Company"
 ```
 
 ####     2.4.  Component Relationship  
@@ -573,7 +573,7 @@ Table 3 SBOM Document Standard Format Coverage Check
 |2-3|Component Supplier Name|(7.5) Package Supplier|(7.5) Package Supplier :|metadata.supplier, components[].supplier|
 |2-4|Component Relationship|-|(11.1) Relationship: CONTAINS|dependencies []. dependsOn|
 |2-5|Component Unique Identifier|(6.5) SPDX Document Namespace, (7.2) Package SPDX Identifier, (7.21 ) External Reference field : SECURITY|(6.5) SPDX Document Namespace, (7.2) SPDXID: ,(7. 21 ) ExternalRef : SECURITY|serialNumber + version, components[]. cpe, components[].purl|
-|2-6|Component File Name|(7. 4) Package File Name|(7. 4) packageFileName :|components[].evidence[].identity[].methods[].[{"technique":"filename","confidence".0.1,"value":<"FilenNme">}]|
+|2-6|Component File Name|(7. 4) Package File Name|(7. 4) packageFileName :|components[].evidence[].identity[].methods[].[{"technique":"filename","confidence".0.1,"value":<"FileName">}]|
 |2-7|Component Download Location|(7. 7) Package Download Location|(7. 7) PackageDownloadLocation :|components [] . externalReferences []|
 |2-8|Component Declared License|(7.15) Declared License|(7.15) PackageLicenseDeclared :|components[].licenses[], components[].licenses[].acknowledgement[ declared ]|
 |2-9|Component Concluded License|(7.13) Concluded License|(7.13) PackageLicenseConcluded :|components[].licenses[], components[].licenses[].acknowledgement[concluded]|
@@ -607,7 +607,7 @@ Below is an example of Automotive SBOM expressed in SPDX v2.3 format.
             "name": "AAA-AAA(Example Software Identifier)",
             "versionInfo": "1.1.1",
             "supplier": "Organization: A Motor Corporation (Example Company Name)",
-            "packageFileName": "AAA-AAA.tarz",
+            "packageFileName": "AAA-AAA.tar.gz",
             "downloadLocation": "NONE",
             "checksums": [
                 {

@@ -55,8 +55,8 @@ These examples are not intended to be exhaustive. Rather, they illustrate repres
 
 # 2. The Role of SBOM in Vehicle Development
 ## 2.1. Representation of SBOM for One Car
-To achieve SBOM-based management aimed at addressing various risks and complying with regulations while maintaining the traditional vehicle development system, the goal in the future is to represent the SBOM for an entire vehicle by associating management using PLM ( Product Lifecycle Management , information management centered on hardware development) with ALM ( Application Lifecycle Management , information management centered on software development). An image of how the SBOM for an entire vehicle would be represented is shown in Figure 1.
-The HBOM  (Hardware Bill of Materials, a list of the hardware that makes up a vehicle, as [HBOM defined by CISA](https://www.cisa.gov/resources-tools/resources/hardware-bill-materials-hbom-framework-supply-chain-risk-management) ) makes it possible to visualize the system structure of components such as ECUs. By associating and managing an SBOM with each of these components, it is possible to understand the software configuration of an entire vehicle. Rather than having one huge SBOM associated with an entire vehicle, the hierarchical structure of the SBOM is used, and the SBOM for each component is bundled using an external reference representation, making it easier to handle and maintain.
+To achieve SBOM-based management aimed at addressing various risks and complying with regulations while maintaining the traditional vehicle development system, the goal in the future is to represent the SBOM for an entire vehicle by associating management using PLM (Product Lifecycle Management , information management centered on hardware development) with ALM (Application Lifecycle Management , information management centered on software development). An image of how the SBOM for an entire vehicle would be represented is shown in Figure 1.
+The HBOM (Hardware Bill of Materials, a list of the hardware that makes up a vehicle, as [HBOM defined by CISA](https://www.cisa.gov/resources-tools/resources/hardware-bill-materials-hbom-framework-supply-chain-risk-management) ) makes it possible to visualize the system structure of components such as ECUs. By associating and managing an SBOM with each of these components, it is possible to understand the software configuration of an entire vehicle. Rather than having one huge SBOM associated with an entire vehicle, the hierarchical structure of the SBOM is used, and the SBOM for each component is bundled using an external reference representation, making it easier to handle and maintain.
 
 ![Figure 1](./images/Figure-1.png)
 
@@ -64,7 +64,7 @@ Figure 1. SBOM Representation Image for One Car (To Be)
 
 ## 2.2. Relationship between Post-shipment Traceability Management and SBOM
 The state of a vehicle's software changes due to various reprocessing processes that are carried out after manufacturing and shipping, so the associated SBOM must also be updated accordingly. For this reason, each association is designed to enable traceability from the VIN for individual vehicle management, via the software part number corresponding to that VIN, to the corresponding SBOM. Figure 2 shows an image of traceability management at each stage.
-Furthermore, with the widespread use of in-vehicle software updates using OTA technology , it is expected that the software configuration of each vehicle will differ after shipment. Even in this situation, the use of SBOM is expected to become more widespread, as traceability of the corresponding SBOM from the VIN will enable compliance with regulations ( such as UN-R156 ) and reliable vulnerability response.
+Furthermore, with the widespread use of in-vehicle software updates using OTA technology, it is expected that the software configuration of each vehicle will differ after shipment. Even in this situation, the use of SBOM is expected to become more widespread, as traceability of the corresponding SBOM from the VIN will enable compliance with regulations (such as UN-R156) and reliable vulnerability response.
 
 ![Figure 2](./images/Figure-2.png)
 
@@ -308,7 +308,7 @@ The Automotive SBOM data fields are described below.
 
 - Used to uniquely identify a component and enable association with relevant external information.
 - The identifier shall support consistent identification of the component across entities participating in the supply chain.
-- For OSS components, the use of commonly recognized identifiers (e.g., PURL ([Package-URL](https://ecma-international.org/publications-and-standards/standards/ecma-427/)), CPE ([Common Platform Enumeration](https://cpe.mitre.org/specification/index.html)), SWID ([Software Identification](https://csrc.nist.gov/projects/software-identification-swid/guidelines)), Tagging ([ISO/IEC 19770-2:2015](https://www.iso.org/standard/65666.html)), and SWHID ([Software Hash Identifier](https://www.softwareheritage.org/software-hash-identifier-swhid/)) ([ISO/IEC 18670:2025](https://www.iso.org/standard/89985.html))) is recommended whenever available. In particular, providing at least one of CPE 2.2, CPE 2.3, or PURL is recommended to facilitate correlation with vulnerability databases and vulnerability management tools.
+- For OSS components, the use of commonly recognized identifiers(e.g., PURL([Package-URL](https://ecma-international.org/publications-and-standards/standards/ecma-427/)), CPE([Common Platform Enumeration](https://cpe.mitre.org/specification/index.html)), SWID([Software Identification](https://csrc.nist.gov/projects/software-identification-swid/guidelines)), Tagging([ISO/IEC 19770-2:2015](https://www.iso.org/standard/65666.html)), and SWHID([Software Hash Identifier](https://www.softwareheritage.org/software-hash-identifier-swhid/)) ([ISO/IEC 18670:2025](https://www.iso.org/standard/89985.html))) is recommended whenever available. In particular, providing at least one of CPE 2.2, CPE 2.3, or PURL is recommended to facilitate correlation with vulnerability databases and vulnerability management tools.
 - For components for which such identifiers are not available, including proprietary or commercial components, alternative identifiers may be used, provided that they uniquely identify the component and support consistent identification of the component across organizations exchanging the SBOM.
 
 **Specific Examples**
@@ -348,7 +348,7 @@ The Automotive SBOM data fields are described below.
 
 - The URL to retrieve the component.  
 - If the component is open source, use the URL to obtain the source code or binary file of the component being used. A URL that can obtain a version of the component being used is preferable, but it can also be substituted with the URL of the top page of the GitHub repository or the download link on the project's web page.  
-- If the component is COTS or proprietary , use "None" .  
+- If the component is COTS or proprietary , use "None".  
 
 **Specific Examples**
 
@@ -366,7 +366,7 @@ The Automotive SBOM data fields are described below.
 
 - A list of the licenses declared by the component’s author. If the component (package) contains multiple license declarations, all of them must be included in this field.  
 - License information not provided by the package author, such as license information from a third-party repository, should be expressed in #2.9 Component Concluded License rather than in this field.  
-- To identify an OSS license, use the SPDX license identifier , but if one is not defined, use the name of the license as is.  
+- To identify an OSS license, use the SPDX license identifier, but if one is not defined, use the name of the license as is.  
 - This item is optional, and NONE is allowed if there is no declaration by the component creator, and NOASSERTION is allowed if it is unknown.  
 - NOASSERTION may be used when declared license information is unavailable, cannot be reasonably determined, or is intentionally not provided, consistent with SPDX semantics. However, the use of NOASSERTION is expected to be limited to such exceptional cases. Whenever reasonably possible, explicit license information should be provided. Because Concluded License is required by Automotive SBOM, the use of NOASSERTION in this field does not indicate that license assessment has not been performed.
 
@@ -437,21 +437,21 @@ The Automotive SBOM data fields are described below.
 Declared License and Concluded License are license types defined in the SPDX specification, and because they are useful for correctly communicating license information when transferring software between organizations, Automotive SBOM also uses these definitions. However, the concepts of mandatory/optional are not directly consistent with the SPDX specification, and will be explained in detail here.  
 
 Specific examples  
-- Case 1 : The SBOM creator refines the license declared by the component creator  
+- Case 1: The SBOM creator refines the license declared by the component creator  
 
         For example, the license notation of the acquired OSS component is "GPL" or "BSD" or the version information that should be specified is unknown, and software containing that OSS component is provided to a third party, that party must identify the version information by examining the source code of the target software, etc., and include the results in the SBOM (Automotive SBOM requirements).  
       In this example, the license expression would be as follows:  
         - Declared License “GPL”, Concluded License “ GPL-3.0-or-later ”  
         - Declared License “BSD”, Concluded License “ BSD-3-Clause ”  
 
-- Case 2 : The component creator has not declared the license and the SBOM creator identifies it  
+- Case 2: The component creator has not declared the license and the SBOM creator identifies it  
 
       If the acquired OSS component does not have a clear license declaration, and software containing that OSS component is provided to a third party, that party must identify the version information by, for example, examining the source code of the target software, and include the results in the SBOM (Automotive SBOM requirement).  
       In this example, the license expression would be as follows:  
         - Declared License “NONE”, Concluded License “ GPL-3.0-or-later ”  
         - Declared License “NOASSERTION”, Concluded License “ BSD-3-Clause ”  
 
-- Case 3 : The SBOM creator changes the license declared by the component creator  
+- Case 3: The SBOM creator changes the license declared by the component creator  
 
       For example, the OSS component you acquired is dual-licensed (GPL-2.0-only and a commercial license), and you provide software containing that OSS component to a third party, and that party uses the target software as GPL-2.0-only software, you must state this in the SBOM.  
       In this example, the license expression would be as follows:
@@ -534,10 +534,10 @@ Below is a list of data fields required by existing industry standards that are 
     This is currently outside the scope of Automotive SBOM Version 1.0.
 
   - SBOM Data Format Name  
-    This is currently outside the scope of Automotive SBOM Version 1.0(typically provided by the underlying SBOM format, such as SPDX or CycloneDX).
+    This is currently outside the scope of Automotive SBOM Version 1.0 (typically provided by the underlying SBOM format, such as SPDX or CycloneDX).
 
   - SBOM Data Format Version  
-    This is currently outside the scope of Automotive SBOM Version 1.0(typically provided by the underlying SBOM format, such as SPDX or CycloneDX).
+    This is currently outside the scope of Automotive SBOM Version 1.0 (typically provided by the underlying SBOM format, such as SPDX or CycloneDX).
 
 ## 3.3. Automation Support  
 ### 3.3.1. Document Format Definition  
@@ -567,7 +567,7 @@ Table 3 SBOM Document Standard Format Coverage Check
 |1-2|SBOM Timestamp|(6.9) Created|(6.9) Created:|metadata.timestamp|
 |1-3|SBOM Type|-|(6.10) CreatorComment :|metadata.lifecycles|
 |1-4|SBOM Primary Component|-|(11.1) Relationship: DESCRIBES|metadata.component|
-|2|Component attribute|
+|2|Component Attributes|
 |2-1|Component Name|(7.1) Package Name|(7.1) PackageName :|components[].name|
 |2-2|Component Version|(7.3) Package Version|(7.3) PackageVersion :|components[].version|
 |2-3|Component Supplier Name|(7.5) Package Supplier|(7.5) Package Supplier :|metadata.supplier, components[].supplier|
@@ -783,15 +783,15 @@ The US government has been actively promoting SBOM since 2018. The automotive in
 While NHTSA does not explicitly require automakers to create and utilize SBOMs, in its September 2022 paper, “Cybersecurity Best Practices In Practices for the Safety of Modern Vehicles," the paper introduces SBOM as a method for implementing detailed voluntary cybersecurity practices.  
 
 #### Cybersecurity and Infrastructure Security Administration
-CISA is the cybersecurity division of the U.S. Department of Homeland Security and the central agency promoting SBOM, providing guidance to the executive branch of the U.S. government on cybersecurity best practices. CISA is also the primary oversight agency for implementing cybersecurity -related policies ( EO: 14028 “Improving the Nation's Cybersecurity” , EO: 13636 “Improving Critical Infrastructure Cybersecurity” , PPD: 21 “Critical Infrastructure Security and Resilience” , EO: 13960 “Promoting the Use of Trustworthy Artificial Intelligence in the Federal Government” ).  
+CISA is the cybersecurity division of the U.S. Department of Homeland Security and the central agency promoting SBOM, providing guidance to the executive branch of the U.S. government on cybersecurity best practices. CISA is also the primary oversight agency for implementing cybersecurity-related policies ( EO: 14028 “Improving the Nation's Cybersecurity” , EO: 13636 “Improving Critical Infrastructure Cybersecurity” , PPD: 21 “Critical Infrastructure Security and Resilience” , EO: 13960 “Promoting the Use of Trustworthy Artificial Intelligence in the Federal Government” ).  
 In July 2026, CISA, in collaboration with the NSA, FBI, and multiple international cybersecurity agencies, published the “2026 Minimum Elements for a Software Bill of Materials (SBOM)” guidance, which updates and replaces the original NTIA 2021 SBOM minimum elements. The guidance reflects advances in SBOM tooling, broader industry adoption, and evolving software supply chain security requirements. It expands the minimum data fields required in an SBOM by introducing additional metadata and integrity-related information, including SBOM author signatures, SBOM format and version information, generation context, tool information, component hashes, and license data. The guidance also strengthens expectations for software component identification, dependency tracking, machine-readable formats, SBOM maintenance, and distribution practices. Although the document does not create new regulatory requirements, it establishes the most current U.S. government baseline for SBOM content and is expected to influence future procurement requirements, cybersecurity frameworks, and software supply chain risk management practices across critical infrastructure sectors, including the automotive industry.  
 
 #### Food and Drug Administration
 The FDA, which regulates the medical device industry, was the first regulatory authority to require advanced cybersecurity features in the design, manufacture, and operation of regulated devices, and has mandated that SBOMs will be mandatory for FDA approval of all new medical devices starting in 2023. This is the first time that SBOMs have been mandated by regulation.
 
 #### Department of Defense
-The U.S. Department of Defense ( DoD ) is a major purchaser of automotive products, including cars, trucks, military vehicles, and related software and equipment. The DoD has an extensive list of requirements for military and non-military equipment, including the Federal Acquisition Regulation, the Defense Federal Acquisition Regulation Supplement, and the Federal Risk and Authorization Management Program, which primarily covers cloud services, and emphasizes the need for SBOM as a critical element of cybersecurity supply chain risk management. While there are currently no regulations requiring SBOM, it is likely that they will be adopted in a proposal to add requirements to the FAR (information as of December 4, 2023 ).  
-Based on these trends, the automotive industry must prepare for SBOM requirements for software products. While SBOM for vehicles and other cyber -physical systems is not explicitly addressed, it is likely that they will be required as DoD procurements increase.  
+The U.S. Department of Defense (DoD) is a major purchaser of automotive products, including cars, trucks, military vehicles, and related software and equipment. The DoD has an extensive list of requirements for military and non-military equipment, including the Federal Acquisition Regulation, the Defense Federal Acquisition Regulation Supplement, and the Federal Risk and Authorization Management Program, which primarily covers cloud services, and emphasizes the need for SBOM as a critical element of cybersecurity supply chain risk management. While there are currently no regulations requiring SBOM, it is likely that they will be adopted in a proposal to add requirements to the FAR (information as of December 4, 2023).  
+Based on these trends, the automotive industry must prepare for SBOM requirements for software products. While SBOM for vehicles and other cyber-physical systems is not explicitly addressed, it is likely that they will be required as DoD procurements increase.  
 
 #### National Institute of Standards and Technology
 NIST, part of the Department of Commerce, publishes standards for SBOM and other software and hardware cybersecurity features at the direction of the White House, which impact the automotive industry by defining specifications for regulations and requirements issued by other U.S. government agencies.
@@ -846,24 +846,15 @@ The United Nations Economic Commission for Europe's World Forum for Harmonizatio
 <br>
 
 # 5. Definition of Terms
-- **SBOM data**  
-The data that makes up the SBOM, a collection of each data field and its corresponding value.  
-- **SBOM file**  
-SBOM data corresponding to any software is represented as a single file.  
-- **SBOM Document Format**  
-A format for writing SBOM documents. Typical examples (standard SBOM document formats) include The Software Package Data Exchange (SPDX) and CycloneDX (various versions).  
-- **Direct Use Parts**  
-Components that are directly used by developers with whom a contract exists in the supply chain (quoting the definition from the Ministry of Economy, Trade and Industry's "Guidelines for Implementing SBOM for Software Management").  
-- **Indirectly used parts**  
-Parts that are reused from parts provided by suppliers (third parties) with whom there is no contractual relationship in the supply chain (quoting the definition from the Ministry of Economy, Trade and Industry's "Guidelines for Implementing SBOM for Software Management").  
-- **component**  
-The program components that make up software.  
-- **OSS (Open-Source Software)**  
-Software whose source code is publicly available and can be used freely by anyone.  
-- **COTS(Commercial Off-The-Shelf)**  
-Commercially available, off-the-shelf software. COTS software may use OSS, be sold with support and warranties , or be developed using other COTS software.  
-- **Proprietary Software**  
-In this document, it refers to software that does not fall under either OSS or COTS, such as in-house developed software or contracted development. Proprietary software can be developed using OSS or COTS.  
+- **SBOM data** The data that makes up the SBOM, a collection of each data field and its corresponding value.  
+- **SBOM file** SBOM data corresponding to any software is represented as a single file.  
+- **SBOM Document Format** A format for writing SBOM documents. Typical examples(standard SBOM document formats) include The Software Package Data Exchange(SPDX) and CycloneDX(various versions).  
+- **Direct Use Parts** Components that are directly used by developers with whom a contract exists in the supply chain(quoting the definition from the Ministry of Economy, Trade and Industry's "Guidelines for Implementing SBOM for Software Management").  
+- **Indirectly used parts** Parts that are reused from parts provided by suppliers(third parties) with whom there is no contractual relationship in the supply chain(quoting the definition from the Ministry of Economy, Trade and Industry's "Guidelines for Implementing SBOM for Software Management").  
+- **component** The program components that make up software.  
+- **OSS (Open-Source Software)** Software whose source code is publicly available and can be used freely by anyone.  
+- **COTS (Commercial Off-The-Shelf)** Commercially available, off-the-shelf software. COTS software may use OSS, be sold with support and warranties, or be developed using other COTS software.  
+- **Proprietary Software** In this document, it refers to software that does not fall under either OSS or COTS, such as in-house developed software or contracted development. Proprietary software can be developed using OSS or COTS.  
 <br>
 <br>
 <br>
@@ -873,10 +864,12 @@ In this document, it refers to software that does not fall under either OSS or C
 Why are there two different license fields for a package (Concluded License and Declared License)?  
 The **Concluded** License field is the license the SPDX file creator believes governs the package. The **Declared** License is what the authors of a project believe governs the package. Often these fields have the same value. When they are different the SPDX file creator should provide background information in the Comments on License field.  
 
-## 6.2. License Type Definitions in BSI ( TR-03183 )  
+## 6.2. License Type Definitions in BSI (TR-03183)  
 **Declared** licenses are all licenses that have been declared by the creator of a component.  
 A special case is that the primary licensee is forced by the component creator to choose from different sets of licenses which are mutually exclusive. A classic example is Qt where the primary licensee has to decide between GPL and a proprietary license; only the made choice can be handed further down the supply chain. Hence the associated licenses can differ from the declared licenses.  
+
 **Associated** licenses are all licenses under which a component can be used by the licensee.  
+
 **Concluded** licenses are determined by the licensee that is the component creator of the primary component of the current SBOM.  
 The statement about multiple component instances with different meta-information also applies if only the license information differs.  
 
@@ -943,7 +936,7 @@ Figure BSI-2. n-level SBOM
 Figure BSI-3. Transitive SBOM
 
 - In addition to a full description of the major components, the SBOM contains information about all components that are directly or indirectly dependent on the major component. A full description and recursive resolution of components and their dependencies is performed on each pass up to at least the first external component (i.e., a third-party component). This component must also be fully described in the SBOM, excluding its dependencies; dependencies on external components do not need to be resolved.  
-- the Transitive SBOM has less information about this external component compared to the first external component on the path at level n-1 .  
+- the Transitive SBOM has less information about this external component compared to the first external component on the path at level n-1.  
 #### Delivery item SBOM
 
 ![Delivery item SBOM](./images/BSI-4-Delivery%20item%20SBOM.png)

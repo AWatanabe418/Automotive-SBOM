@@ -4,7 +4,7 @@ SBOM (Software Bill of Materials, a list of the components that make up software
 
 ## 1.2. Objectives of Automotive SBOM
 
-The Automotive SBOM is defined as an SBOM standard that follows general-purpose SBOM specifications while addressing the needs and practices of the automotive industry. The objectives of Automotive SBOM are as follows:
+The Automotive SBOM is defined as a framework that follows general-purpose SBOM specifications while addressing the needs and practices of the automotive industry. The objectives of Automotive SBOM are as follows:
 
 ### Enable a Common Language Across the Automotive Supply Chain
 
@@ -74,10 +74,10 @@ Figure 2. Post-shipment Traceability Management
 <br>
 <br>
 
-# 3. Automotive SBOM Specifications
-## 3.1. Automotive SBOM Specification Configuration
+# 3. Automotive SBOM Framework
+## 3.1. Automotive SBOM Framework Configuration
 
-The Automotive SBOM specification consists of the following definitions:
+The Automotive SBOM framework consists of the following definitions:
 
 * Data Fields
   Definition of data items to be handled as SBOM.
@@ -88,19 +88,19 @@ The Automotive SBOM specification consists of the following definitions:
 * Practice and Process
   Operational methods for requesting, generating, exchanging, and using SBOMs.
 
-The Automotive SBOM specification is intended to support the accurate and consistent exchange of software configuration information throughout the automotive supply chain. It also supports software risk management activities, including vulnerability management, license compliance, and supply chain traceability.
+The Automotive SBOM framework is intended to support the accurate and consistent exchange of software configuration information throughout the automotive supply chain. It also supports software risk management activities, including vulnerability management, license compliance, and supply chain traceability.
 
-The prerequisites for defining the Automotive SBOM specification are as follows:
+The prerequisites for defining the Automotive SBOM framework are as follows:
 
 1. Data fields are defined as the minimum set of information required to identify and understand the software components contained in managed software.
 
-2. Each data field has an attribute of either Required or Optional. Required data fields shall be provided in all cases. Optional data fields may be included or omitted depending on the implementation requirements, operational requirements, or use cases of each entity. The absence of Optional data fields does not affect conformance to this specification unless otherwise required by industry guidelines, contractual requirements, or organizational policies.
+2. Each data field has an attribute of either Required or Optional. Required data fields shall be provided in all cases. Optional data fields may be included or omitted depending on the implementation requirements, operational requirements, or use cases of each entity. The absence of Optional data fields does not affect conformance to this framework unless otherwise required by industry guidelines, contractual requirements, or organizational policies.
 
 3. There shall be no data fields for dynamic information, such as vulnerability information. Instead, the data fields shall contain information necessary to identify software components and support risk management activities.
    * Components shall be uniquely identifiable and capable of being matched with external sources of information.
    * Data fields shall support the identification of known vulnerabilities, applicable licenses, and software suppliers through external data sources.
 
-4. There shall be no data fields for entity-specific business information, such as vehicle model information. Such information shall be defined separately as implementation-specific schemas outside the scope of this specification.
+4. There shall be no data fields for entity-specific business information, such as vehicle model information. Such information shall be defined separately as implementation-specific schemas outside the scope of this framework.
 
 The relationship between Automotive SBOM and existing industry standards is as follows:
 
@@ -541,13 +541,13 @@ Below is a list of data fields required by existing industry standards that are 
 
 ## 3.3. Automation Support  
 ### 3.3.1. Document Format Definition  
-Automotive SBOM does not prescribe any specific SBOM document format or version. Any SBOM document format or version may be used, provided that the required data fields defined in Chapter 3.2 can be expressed. At the time of publication, examples of supported formats include SPDX 2.x/3.x and CycloneDX 1.4/1.5/1.6/1.7. Future versions of these formats may also be used without requiring revision of this specification. For smooth SBOM exchange, conformance with both the Automotive SBOM specification and the specification of the chosen SBOM document format is required.  
+Automotive SBOM does not prescribe any specific SBOM document format or version. Any SBOM document format or version may be used, provided that the required data fields defined in Chapter 3.2 can be expressed. At the time of publication, examples of supported formats include SPDX 2.x/3.x and CycloneDX 1.4/1.5/1.6/1.7. Future versions of these formats may also be used without requiring revision of this framework. For smooth SBOM exchange, conformance with both the Automotive SBOM framework and the specification of the chosen SBOM document format is required.  
 
 The objective of Automotive SBOM is to facilitate the accurate and consistent exchange of software configuration information among entities participating in the automotive supply chain. Automotive SBOM provides a common framework for defining the SBOM information to be exchanged, rather than mandating a particular implementation method.
 
 Automation is an important objective of SBOM adoption, particularly for vulnerability management, software inventory management, regulatory compliance activities, and coordination across complex automotive supply chains. Machine-readable formats such as SPDX and CycloneDX are generally preferred for these use cases because they enable efficient automated processing and integration with other systems.
 
-However, organizations may have different levels of maturity, tooling, and SBOM adoption. Therefore, Automotive SBOM focuses on defining common data elements rather than prescribing a specific implementation approach. Organizations may use manual, automated, or hybrid approaches to create and maintain SBOMs, provided that the resulting SBOM information meets the requirements of this specification.  
+However, organizations may have different levels of maturity, tooling, and SBOM adoption. Therefore, Automotive SBOM focuses on defining common data elements rather than prescribing a specific implementation approach. Organizations may use manual, automated, or hybrid approaches to create and maintain SBOMs, provided that the resulting SBOM information meets the requirements of this framework.  
 
 By defining a common set of Automotive SBOM data elements independently of any specific tool or document format, this framework aims to improve interoperability among organizations using different SBOM solutions. While format conversion or tool integration may still be required in some environments, adoption of a common Automotive SBOM data model can reduce organization-specific customization, proprietary information requests, and information mapping efforts across the automotive supply chain.  
 

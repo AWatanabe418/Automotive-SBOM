@@ -261,7 +261,7 @@ The Automotive SBOM data fields are described below.
 ####     2.7.  Component Download Location  
 <ins>Description and Uses</ins>  
 - The URL to retrieve the component.  
-- If the component is open source, use the URL to obtain the source code or binary file of the component being used. A URL that can obtain a version of the component being used is preferable, but it can also be substituted with the URL of the top page of the Github repository or the download link on the project's web page.  
+- If the component is open source, use the URL to obtain the source code or binary file of the component being used. A URL that can obtain a version of the component being used is preferable, but it can also be substituted with the URL of the top page of the GitHub repository or the download link on the project's web page.  
 - If the component is COTS or proprietary , use "None" .  
 
 <ins>Specific examples</ins>  
@@ -473,8 +473,8 @@ Below is an example of Automotive SBOM expressed in SPDX v2.3 format.
     "SPDXID": "SPDXRef-DOCUMENT",
     "creationInfo": {
         "creators": [
-            "Organization: A Motor Corporation(company name)",
-            "Tool: SCA tool (tool name) v0.11.1 (version information)"
+            "Organization: A Motor Corporation(Example Company Name)",
+            "Tool: Example Tool v0.11.1 (version information)"
         ],
         "created": "2025-01-01T05:55:55Z",
         "comment": "SBOM Type: Build"
@@ -486,9 +486,9 @@ Below is an example of Automotive SBOM expressed in SPDX v2.3 format.
     "packages": [
         {
             "SPDXID": "SPDXRef-custom-AAA-AAA-1.1.1-2025-01-01",
-            "name": "AAA-AAA(software product number)",
+            "name": "AAA-AAA(Example Software Identifier)",
             "versionInfo": "1.1.1",
-            "supplier": "Organization: A Motor Corporation (company name)",
+            "supplier": "Organization: A Motor Corporation (Example Company Name)",
             "packageFileName": "AAA-AAA.tarz",
             "downloadLocation": "NONE",
             "checksums": [
@@ -527,7 +527,7 @@ As described in Chapter 2.1, the SBOM file for a single vehicle is not represent
 Figure 4 How to Represent an SBOM File for One Vehicle and its Advantages and Disadvantages  
   
 
-Figure 5 shows an image of the reference relationship between the target software and its corresponding SBOM file .  
+Figure 5 shows an image of the reference relationship between the target software and its corresponding SBOM file.  
   
 
 ![alt text](./images/Figure-5.png)

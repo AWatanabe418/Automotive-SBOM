@@ -130,7 +130,7 @@ Table 1 Automotive SBOM Data Field Definitions
 |2-3|Component Supplier Name|〇|Identifying suppliers of affected components|
 |2-4|Component Relationship|〇|Identifying dependencies of target components|
 |2-5|Component Unique Identifier|〇|Used to match target components with external data|
-|2-6|Component File Name|〇|Used to check the license of the target component|
+|2-6|Component File Name|〇|Identifying the artifact corresponding to the component|
 |2-7|Component Download Location|-|Used to check the license of the target component|
 |2-8|Component Declared License|-|Used to check the license of the target component|
 |2-9|Component Concluded License|〇|Used to check the license of the target component|
@@ -252,7 +252,8 @@ The Automotive SBOM data fields are described below.
 
 ####     2.6  Component File Name  
 <ins>Description and Uses</ins>  
-- The file name of the component, used to identify the component and check its license.  
+- The file name of the software artifact corresponding to the component.
+- This information is used to identify the artifact represented by the component when exchanging SBOM information among organizations. It supports traceability between the component and the delivered software artifact and can be used together with artifact-specific information such as hashes, licenses, and vulnerabilities.
 
 <ins>Specific examples</ins>  
 “PackageFileName”: “B.exe”  

@@ -22,7 +22,7 @@ Automotive SBOM provides the information necessary to support software risk mana
 
 SBOM information is typically collected and managed using a variety of tools and platforms, but the capabilities of available solutions vary significantly. Automotive SBOM can be used to communicate automotive-specific requirements to the broader SBOM tool ecosystem, including commercial vendors, open source projects, and platform providers. It also provides development teams with objective criteria for evaluating and selecting SBOM generation, management, and analysis solutions.
 
-### 1.3 Automotive-Specific Use Cases
+## 1.3. Automotive-Specific Use Cases
 
 While SBOM concepts are applicable across many industries, the automotive industry has several unique characteristics that influence how SBOM information is created, exchanged, maintained, and utilized. These characteristics include complex multi-tier supply chains, long product lifecycles, ECU-based software architectures, functional safety requirements, and the need for coordinated vulnerability management across multiple stakeholders.
 
@@ -73,7 +73,7 @@ Figure 2 Post-shipment Traceability Management 
 <br>
 
 # 3. Automotive SBOM Specifications
-# 3.1. Automotive SBOM Specification Configuration
+## 3.1. Automotive SBOM Specification Configuration
 
 The Automotive SBOM specification consists of the following definitions:
 
@@ -124,7 +124,7 @@ Table 1 Automotive SBOM Data Field Definitions
 |1-2|SBOM Timestamp|〇|Identifying the development phase of the target component|
 |1-3|SBOM Type|〇|Identifying the development phase of the target component|
 |1-4|SBOM Primary Component|〇|Identifying target components|
-|2|Component attribute|
+|2|Component Attributes|
 |2-1|Component Name|〇|Identifying target components|
 |2-2|Component Version|〇|Identifying the version of the component in question|
 |2-3|Component Supplier Name|〇|Identifying suppliers of affected components|
@@ -146,8 +146,8 @@ The Automotive SBOM data fields are described below.
 <br>
 
 ---
-#### 1  SBOM Metadata  
-####     1.1  SBOM Author Name  
+### 1.  SBOM Metadata  
+####     1.1.  SBOM Author Name  
 <ins>Description and Uses</ins>  
 - Used to uniquely identify the SBOM creation entity.
 - This information identifies the entity that created (provided) the SBOM, and should be a company name or individual name. Multiple entities are allowed.
@@ -157,7 +157,7 @@ The Automotive SBOM data fields are described below.
 <ins>Specific examples</ins>  
 "creators": ["Organization: T Company, Ltd. ", "Tool: BlackDuck - v2024.10.1"]
  
-####     1.2  SBOM Timestamp
+####     1.2.  SBOM Timestamp
 <ins>Description and Uses</ins>  
 - Used to identify the date and time the SBOM was created or updated.
 - Shall be represented in UTC using the ISO 8601 format `YYYY-MM-DDThh:mm:ssZ` to ensure consistency across time zones and locales.
@@ -168,15 +168,15 @@ The Automotive SBOM data fields are described below.
 <ins>Specific examples</ins>  
 "created": "2025-01-24T22:31:37Z"
 
-####     1.3  SBOM Type
+####     1.3.  SBOM Type
 <ins>Description and Uses</ins>  
-- Used to identify the timing and target of the SBOM.
+- Used to identify the lifecycle phase and scope of the SBOM.
 - Expressed using the CISA SBOM Types described in Chapter 6.4.
 
 <ins>Specific examples</ins>  
 "creator comment": [" SBOM Type : Build "]
 
-####     1.4  SBOM Primary Component
+####     1.4.  SBOM Primary Component
 <ins>Description and Uses</ins>  
 - Used to identify the target component that the SBOM represents.
 - Generally, the name of the target software (product, function name, etc.) is assumed, but the project name or various codes (software product number, etc.) within each entity may also be used.
@@ -185,8 +185,8 @@ The Automotive SBOM data fields are described below.
 "name": "T-Sample" (if using the software name)  
 "name": "xxxxx-xxxxx" (if using the software model number)
 
-#### 2  Component Attributes  
-####     2.1  Component Name  
+### 2.  Component Attributes  
+####     2.1.  Component Name  
 <ins>Description and Uses</ins>  
 - Used to identify the component.
 - Generally, the name of the target software (product, function name, etc.) is assumed, but the project name or various codes (software product number, etc.) within each entity may also be used.  
@@ -195,7 +195,7 @@ The Automotive SBOM data fields are described below.
 "name": "A-Component " ( if using the function name)  
 "name": "xxxxx-xxxxx" ( if using the software part number)
 
-####     2.2  Component Version  
+####     2.2.  Component Version  
 <ins>Description and Uses</ins>  
 - A unique identifier of the version of the software component.
 - Any versioning scheme may be used, provided that it uniquely identifies the version of the component.
@@ -205,14 +205,14 @@ The Automotive SBOM data fields are described below.
 "versionInfo": "2025.09" (Calendar Versioning)  
 "versionInfo": "a1b2c3d4e5f67890abcdef1234567890abcdef12" (Git commit hash)
 
-#### 2.3 Component Supplier Name
+####     2.3. Component Supplier Name
 <ins>Description and Uses</ins>  
 - Used to identify the organization responsible for providing, maintaining, or distributing the component.
 - This information supports software supply chain traceability and helps identify the appropriate entity for vulnerability management, license compliance, and lifecycle management activities.
 - For COTS or proprietary software, the legal entity name should be used. If necessary, jurisdiction information may be added to distinguish entities with similar names.
 - For OSS components, the name of the organization, foundation, company, or project responsible for maintaining the component should be used.
 - URLs, domain names, package registry names, and source code hosting services should not be used as supplier values unless they are also the organization responsible for maintaining the component.
-- If a component provided by a higher-level supplier is used without modification, the name of the higher-level supplier should be used in this field. If the component has been modified by the supplier of the SBOM Primary Component, the name of the supplier of the SBOM Primary Component should be used in this field. Furthermore, information about the higher-level supplier should be conveyed using the Relationship field.
+- If a component provided by a supplier upstream in the supply chain is used without modification, the name of that supplier should be used in this field. If the component has been modified by the supplier of the SBOM Primary Component, the name of that supplier should be used. Information about the supplier should also be conveyed using the Relationship field.
 - The supplier should be identified whenever possible to support software supply chain traceability and lifecycle management activities. If the supplier cannot be determined after reasonable efforts, the SPDX value "NOASSERTION" may be used. The use of "NOASSERTION" should be limited to exceptional cases.
 
 <ins>Specific examples</ins>  
@@ -221,7 +221,7 @@ The Automotive SBOM data fields are described below.
 "supplier": "Organization : Microsoft Corporation"  
 "supplier": "Organization : B -Company "  
 
-####     2.4  Component Relationship  
+####     2.4.  Component Relationship  
 <ins>Description and Uses</ins>  
 - Used to explain the relationship between the component and other components.  
 - The relationships are expressed in the following types:  
@@ -229,14 +229,14 @@ The Automotive SBOM data fields are described below.
   A type for representing SBOM Primary Component. Specifically, DESCRIBES (in the case of SPDX), or metadata (in the case of CycloneDX) are used.
   - Includes  
   A type used to express when a component is included in or depends on another component. Specifically, CONTAINS, DEPENDS_ON, DEPENDENCY_OF, DYNAMIC_LINK, or STATIC_LINK (in the case of SPDX), or dependencies (in the case of CycloneDX) are used.  
-  - Heritage , Pedigree  
+  - Heritage / Pedigree  
   A type used to express that a given component was created by modifying another, higher-level component. Specifically, this can be represented using GENERATED_FROM or DESCENDANT_OF in SPDX, or pedigree in CycloneDX.  
 - The completeness of the relationship expression can also be expressed using Unknown, None, Partial, and Known.  
 
 <ins>Specific examples</ins>  
 "Relationship": "SPDXRef-2b9b148e-fb5e-3079-2f88-d5e9f39431dc CONTAINS SPDXRef-9811def5-4723-5e3f-2dbd-8c33c9ff62ae"
 
-#### 2.5 Component Unique Identifier
+####     2.5. Component Unique Identifier
 
 <ins>Description and Uses</ins>  
 - Used to uniquely identify a component and enable association with relevant external information.
@@ -250,7 +250,7 @@ The Automotive SBOM data fields are described below.
 "swid ": "65699569-EA51-4346-8BDC - 4076FA5C0E72"  
 "swhid": "swh:1:dir:bc7ddd62cf3d72ffdc365e1bf2dea6eeaa44e185;origin=https://github.com/rdicosmo/parmap;visit=swh:1:snp:8ddca416836fbbc2a7704c69db38739bef6b 6cae;anchor=swh:1:rev:ecd3744ed558da4ea2bf9eb87b80b8949f417126"
 
-####     2.6  Component File Name  
+####     2.6.  Component File Name  
 <ins>Description and Uses</ins>  
 - The file name of the software artifact corresponding to the component.
 - This information is used to identify the artifact represented by the component when exchanging SBOM information among organizations. It supports traceability between the component and the delivered software artifact and can be used together with artifact-specific information such as hashes, licenses, and vulnerabilities.
@@ -258,7 +258,7 @@ The Automotive SBOM data fields are described below.
 <ins>Specific examples</ins>  
 “PackageFileName”: “B.exe”  
 
-####     2.7  Component Download Location  
+####     2.7.  Component Download Location  
 <ins>Description and Uses</ins>  
 - The URL to retrieve the component.  
 - If the component is open source, use the URL to obtain the source code or binary file of the component being used. A URL that can obtain a version of the component being used is preferable, but it can also be substituted with the URL of the top page of the Github repository or the download link on the project's web page.  
@@ -268,7 +268,7 @@ The Automotive SBOM data fields are described below.
 "PackageDownloadLocation": "`http://acompany/a.zip`"
 “PackageDownloadLocation”: “None”  
 
-####     2.8  Component Declared License  
+####     2.8.  Component Declared License  
 <ins>Description and Uses</ins>  
 - A list of the licenses declared by the component’s author. If the component (package) contains multiple license declarations, all of them must be included in this field.  
 - License information not provided by the package author, such as license information from a third-party repository, should be expressed in #2.9 Component Concluded License rather than in this field.  
@@ -279,7 +279,7 @@ The Automotive SBOM data fields are described below.
 <ins>Specific examples</ins>  
 "licenseDeclared": "(LGPL-2.0-only AND LicenseRef-3)"  
 
-####     2.9  Component Concluded License  
+####     2.9.  Component Concluded License  
 <ins>Description and Uses</ins>  
 - The concluded license represents the license assessment associated with the component based on available licensing information.
 - This information is used to communicate the license assessment of the component when exchanging SBOM information among organizations. It may be used to support license verification, compliance activities, and downstream evaluation of licensing obligations.
@@ -287,7 +287,7 @@ The Automotive SBOM data fields are described below.
 <ins>Specific examples</ins>  
 "licenseConcluded": "Apache-2.0"  
 
-####     2.10  Component Cryptographic Hash  
+####     2.10.  Component Cryptographic Hash  
 <ins>Description and Uses</ins>  
 - A hash value of the component, using SHA-256 or higher algorithm.  
 - It is used for purposes such as preventing tampering and verifying authenticity.  
@@ -295,7 +295,7 @@ The Automotive SBOM data fields are described below.
 <ins>Specific examples</ins>  
 “FileChecksum”: ”SHA256:5254c46a631572156bd94d61649f8fb30473c150232d28489f88e1d99950b5a8”  
 
-####     2.11  Component Copyright Notice  
+####     2.11.  Component Copyright Notice  
 <ins>Description and Uses</ins>  
 - Copyright notice associated with the component.  
 - The value should contain the copyright notice provided by the component author, copyright holder, or supplier.
@@ -304,7 +304,7 @@ The Automotive SBOM data fields are described below.
 <ins>Specific examples</ins>  
 "copyrightText ":"The Apache Software Foundation"
 
-####     2.12  Component External Document References  
+####     2.12.  Component External Document References  
 <ins>Description and Uses</ins>  
 - This field specifies references to external SBOM documents associated with the component.
 - It is used to link components to externally managed SBOMs, support hierarchical SBOM structures, and enable vehicle-level SBOM composition by combining separately managed SBOM documents.
@@ -352,7 +352,7 @@ Table 2 The Results of the Consistency Check
 |1-2|SBOM Timestamp|■|■|■|■|■|
 |1-3|SBOM Type|■|(□)|-|-|■|
 |1-4|SBOM Primary Component|■|-|-|-|-|
-|2|Component attribute|
+|2|Component Attributes|
 |2-1|Component Name|■|■|■|■|■|
 |2-2|Component Version|■|■|■|■|■|
 |2-3|Component Supplier Name|■|■|■|■|■|
@@ -813,7 +813,7 @@ Because software may be provided under a choice of more than one license, or bec
 <br>
 <br>
 
-  # 7. Appendix (External Materials)  
+# 7. Appendix (External Materials)  
 - 2021 The Minimum Elements For a Software Bill of Materials (SBOM)  
   https://www.ntia.gov/report/2021/minimum-elements-software-bill-materials-sbom
 

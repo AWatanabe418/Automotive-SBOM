@@ -136,7 +136,7 @@ Table 1 Automotive SBOM Data Field Definitions
 |2-9|Component Concluded License|〇|Used to check the license of the target component|
 |2-10|Component Cryptographic Hash|-|Used to verify the authenticity of the target component|
 |2-11|Component Copyright Notice|〇|Used to check the copyright of the target component|
-|2-12|Component External Document References|〇|Used for matching with external SBOM|
+|2-12|Component External Document References|〇|Used to reference externally managed SBOMs and support hierarchical SBOM composition|
   
 (Legend: 〇: Required, - :  Optional)  
   
@@ -307,7 +307,8 @@ The Automotive SBOM data fields are described below.
 
 ####     2.12  Component External Document References  
 <ins>Description and Uses</ins>  
-- If the component is expressed using a different SBOM (file), information to identify that SBOM (file).  
+- This field specifies references to external SBOM documents associated with the component.
+- It is used to link components to externally managed SBOMs, support hierarchical SBOM structures, and enable vehicle-level SBOM composition by combining separately managed SBOM documents.
 
 <ins>Specific examples</ins>  
 “ExternalDocumentRef”: ”DocumentRef-B-Component SBOM `http://www.b.sbom` SHA256: e3599f715db5acb8b37f132c5610005d5b849763bc748b2260bc939c225c4342”  

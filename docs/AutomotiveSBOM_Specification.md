@@ -281,9 +281,8 @@ The Automotive SBOM data fields are described below.
 
 ####     2.9  Component Concluded License  
 <ins>Description and Uses</ins>  
-- The license that the creator of the SBOM (file) concluded applies to the component .  
-- The Concluded License in the SPDX specification is an optional item, but it is a required item in the Automotive SBOM . If the license is unknown or ambiguous, it is the responsibility of the SBOM creator, who is the entity distributing the target component , to identify the license.  
-- To identify an OSS license, use the SPDX license identifier , but if one is not defined, use the name of the license as is.  
+- The concluded license represents the license assessment associated with the component based on available licensing information.
+- This information is used to communicate the license assessment of the component when exchanging SBOM information among organizations. It may be used to support license verification, compliance activities, and downstream evaluation of licensing obligations.
 
 <ins>Specific examples</ins>  
 "licenseConcluded": "Apache-2.0"  

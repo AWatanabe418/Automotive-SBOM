@@ -58,15 +58,17 @@ These examples are not intended to be exhaustive. Rather, they illustrate repres
 To achieve SBOM-based management aimed at addressing various risks and complying with regulations while maintaining the traditional vehicle development system, the goal in the future is to represent the SBOM for an entire vehicle by associating management using PLM ( Product Lifecycle Management , information management centered on hardware development) with ALM ( Application Lifecycle Management , information management centered on software development). An image of how the SBOM for an entire vehicle would be represented is shown in Figure 1.
 The HBOM  (Hardware Bill of Materials, a list of the hardware that makes up a vehicle, as [HBOM defined by CISA](https://www.cisa.gov/resources-tools/resources/hardware-bill-materials-hbom-framework-supply-chain-risk-management) ) makes it possible to visualize the system structure of components such as ECUs. By associating and managing an SBOM with each of these components, it is possible to understand the software configuration of an entire vehicle. Rather than having one huge SBOM associated with an entire vehicle, the hierarchical structure of the SBOM is used, and the SBOM for each component is bundled using an external reference representation, making it easier to handle and maintain.
 
-![alt text](./images/Figure-1.png)
-Figure 1 SBOM Representation Image for One Car (ToBe)
+![Figure 1](./images/Figure-1.png)
+
+Figure 1. SBOM Representation Image for One Car (To Be)
 
 ## 2.2. Relationship between Post-shipment Traceability Management and SBOM
 The state of a vehicle's software changes due to various reprocessing processes that are carried out after manufacturing and shipping, so the associated SBOM must also be updated accordingly. For this reason, each association is designed to enable traceability from the VIN for individual vehicle management, via the software part number corresponding to that VIN, to the corresponding SBOM. Figure 2 shows an image of traceability management at each stage.
 Furthermore, with the widespread use of in-vehicle software updates using OTA technology , it is expected that the software configuration of each vehicle will differ after shipment. Even in this situation, the use of SBOM is expected to become more widespread, as traceability of the corresponding SBOM from the VIN will enable compliance with regulations ( such as UN-R156 ) and reliable vulnerability response.
 
-![alt text](./images/Figure-2.png)
-Figure 2 Post-shipment Traceability Management 
+![Figure 2](./images/Figure-2.png)
+
+Figure 2. Post-shipment Traceability Management
 
 <br>
 <br>
@@ -148,65 +150,112 @@ The Automotive SBOM data fields are described below.
 ---
 ### 1.  SBOM Metadata  
 ####     1.1.  SBOM Author Name  
-<ins>Description and Uses</ins>  
+
+**Description and Uses**
+
 - Used to uniquely identify the SBOM creation entity.
 - This information identifies the entity that created (provided) the SBOM, and should be a company name or individual name. Multiple entities are allowed.
 - Include the legal entity name and unique identifier (e.g., email address, website) if available. If the legal entity name is not available, include the name of the SBOM creator along with contact information such as an email address.
 - If possible, include information about the tools and versions used by the SBOM creator to create the SBOM (this can be used to judge the quality of the SBOM). Separate the tool name and tool version by "-".
 
-<ins>Specific examples</ins>  
-"creators": ["Organization: T Company, Ltd. ", "Tool: BlackDuck - v2024.10.1"]
+**Specific Examples**
+
+```json
+"creators": [
+  "Organization: T Company, Ltd.",
+  "Tool: BlackDuck - v2024.10.1"
+]
+```
  
 ####     1.2.  SBOM Timestamp
-<ins>Description and Uses</ins>  
+
+**Description and Uses**
+
 - Used to identify the date and time the SBOM was created or updated.
 - Shall be represented in UTC using the ISO 8601 format `YYYY-MM-DDThh:mm:ssZ` to ensure consistency across time zones and locales.
 - The year shall be represented using four decimal digits. The month, day, hour, minute, and second shall each be represented using two decimal digits with leading zeros as necessary.
 - The time shall be expressed in 24-hour notation.
 - Fractional seconds shall not be included.
 
-<ins>Specific examples</ins>  
+**Specific Examples**
+
+```json
 "created": "2025-01-24T22:31:37Z"
+```
 
 ####     1.3.  SBOM Type
-<ins>Description and Uses</ins>  
+
+**Description and Uses**
+
 - Used to identify the lifecycle phase and scope of the SBOM.
 - Expressed using the CISA SBOM Types described in Chapter 6.4.
 
-<ins>Specific examples</ins>  
-"creator comment": [" SBOM Type : Build "]
+**Specific Examples**
+
+```json
+"creatorComment": "SBOM Type : Build"
+```
 
 ####     1.4.  SBOM Primary Component
-<ins>Description and Uses</ins>  
+
+**Description and Uses**
+
 - Used to identify the target component that the SBOM represents.
 - Generally, the name of the target software (product, function name, etc.) is assumed, but the project name or various codes (software product number, etc.) within each entity may also be used.
 
-<ins>Specific examples</ins>  
-"name": "T-Sample" (if using the software name)  
+**Specific Examples**
+
+```json
+"name": "T-Sample" (if using the software name)
+```
+
+```json
 "name": "xxxxx-xxxxx" (if using the software model number)
+```
 
 ### 2.  Component Attributes  
 ####     2.1.  Component Name  
-<ins>Description and Uses</ins>  
+
+**Description and Uses**
+
 - Used to identify the component.
 - Generally, the name of the target software (product, function name, etc.) is assumed, but the project name or various codes (software product number, etc.) within each entity may also be used.  
 
-<ins>Specific examples</ins>  
-"name": "A-Component " ( if using the function name)  
+**Specific Examples**
+
+```json
+"name": "A-Component" ( if using the function name)
+```
+
+```json
 "name": "xxxxx-xxxxx" ( if using the software part number)
+```
 
 ####     2.2.  Component Version  
-<ins>Description and Uses</ins>  
+
+**Description and Uses**
+
 - A unique identifier of the version of the software component.
 - Any versioning scheme may be used, provided that it uniquely identifies the version of the component.
 
-<ins>Specific examples</ins>  
-"versionInfo": "1.0.0" (Semantic Versioning)  
-"versionInfo": "2025.09" (Calendar Versioning)  
+**Specific Examples**
+
+```json
+"versionInfo": "1.0.0" (Semantic Versioning)
+```
+
+```json
+"versionInfo": "2025.09" (Calendar Versioning)
+```
+
+```json
 "versionInfo": "a1b2c3d4e5f67890abcdef1234567890abcdef12" (Git commit hash)
+```
 
 ####     2.3. Component Supplier Name
-<ins>Description and Uses</ins>  
+
+**Description and Uses**
+
 - Used to identify the organization responsible for providing, maintaining, or distributing the component.
 - This information supports software supply chain traceability and helps identify the appropriate entity for vulnerability management, license compliance, and lifecycle management activities.
 - For COTS or proprietary software, the legal entity name should be used. If necessary, jurisdiction information may be added to distinguish entities with similar names.
@@ -215,14 +264,28 @@ The Automotive SBOM data fields are described below.
 - If a component provided by a supplier upstream in the supply chain is used without modification, the name of that supplier should be used in this field. If the component has been modified by the supplier of the SBOM Primary Component, the name of that supplier should be used. Information about the supplier should also be conveyed using the Relationship field.
 - The supplier should be identified whenever possible to support software supply chain traceability and lifecycle management activities. If the supplier cannot be determined after reasonable efforts, the SPDX value "NOASSERTION" may be used. The use of "NOASSERTION" should be limited to exceptional cases.
 
-<ins>Specific examples</ins>  
-"supplier": "Organization : OpenSSL Software Foundation"  
-"supplier": "Organization : The Apache Software Foundation"  
-"supplier": "Organization : Microsoft Corporation"  
-"supplier": "Organization : B -Company "  
+**Specific Examples**
+
+```json
+"supplier": "Organization: OpenSSL Software Foundation"
+```
+
+```json
+"supplier": "Organization: The Apache Software Foundation"
+```
+
+```json
+"supplier": "Organization: Microsoft Corporation"
+```
+
+```json
+"supplier": "B - Company"
+```
 
 ####     2.4.  Component Relationship  
-<ins>Description and Uses</ins>  
+
+**Description and Uses**
+
 - Used to explain the relationship between the component and other components.  
 - The relationships are expressed in the following types:  
   - Primary  
@@ -233,84 +296,138 @@ The Automotive SBOM data fields are described below.
   A type used to express that a given component was created by modifying another, higher-level component. Specifically, this can be represented using GENERATED_FROM or DESCENDANT_OF in SPDX, or pedigree in CycloneDX.  
 - The completeness of the relationship expression can also be expressed using Unknown, None, Partial, and Known.  
 
-<ins>Specific examples</ins>  
+**Specific Examples**
+
+```json
 "Relationship": "SPDXRef-2b9b148e-fb5e-3079-2f88-d5e9f39431dc CONTAINS SPDXRef-9811def5-4723-5e3f-2dbd-8c33c9ff62ae"
+```
 
 ####     2.5. Component Unique Identifier
 
-<ins>Description and Uses</ins>  
+**Description and Uses**
+
 - Used to uniquely identify a component and enable association with relevant external information.
 - The identifier shall support consistent identification of the component across entities participating in the supply chain.
 - For OSS components, the use of commonly recognized identifiers (e.g., PURL ([Package-URL](https://ecma-international.org/publications-and-standards/standards/ecma-427/)), CPE ([Common Platform Enumeration](https://cpe.mitre.org/specification/index.html)), SWID ([Software Identification](https://csrc.nist.gov/projects/software-identification-swid/guidelines)), Tagging ([ISO/IEC 19770-2:2015](https://www.iso.org/standard/65666.html)), and SWHID ([Software Hash Identifier](https://www.softwareheritage.org/software-hash-identifier-swhid/)) ([ISO/IEC 18670:2025](https://www.iso.org/standard/89985.html))) is recommended whenever available. In particular, providing at least one of CPE 2.2, CPE 2.3, or PURL is recommended to facilitate correlation with vulnerability databases and vulnerability management tools.
 - For components for which such identifiers are not available, including proprietary or commercial components, alternative identifiers may be used, provided that they uniquely identify the component and support consistent identification of the component across organizations exchanging the SBOM.
 
-<ins>Specific examples</ins>  
-"cpe": "cpe:2.3:a:systembom:bomviewer:3.2.1"  
-"purl": "pkg:rpm/sysbom/bomgen"  
-"swid ": "65699569-EA51-4346-8BDC - 4076FA5C0E72"  
-"swhid": "swh:1:dir:bc7ddd62cf3d72ffdc365e1bf2dea6eeaa44e185;origin=https://github.com/rdicosmo/parmap;visit=swh:1:snp:8ddca416836fbbc2a7704c69db38739bef6b 6cae;anchor=swh:1:rev:ecd3744ed558da4ea2bf9eb87b80b8949f417126"
+**Specific Examples**
+
+```json
+"cpe": "cpe:2.3:a:systembom:bomviewer:3.2.1"
+```
+
+```json
+"purl": "pkg:rpm/sysbom/bomgen"
+```
+
+```json
+"swid": "65699569-EA51-4346-8BDC-4076FA5C0E72"
+```
+
+```json
+"swh:1:dir:bc7ddd62cf3d72ffdc365e1bf2dea6eeaa44e185;origin=https://github.com/rdicosmo/parmap;visit=swh:1:snp:8ddca416836fbbc2a7704c69db38739bef6b6cae;anchor=swh:1:rev:ecd3744ed558da4ea2bf9eb87b80b8949f417126"
+```
 
 ####     2.6.  Component File Name  
-<ins>Description and Uses</ins>  
+
+**Description and Uses**
+
 - The file name of the software artifact corresponding to the component.
 - This information is used to identify the artifact represented by the component when exchanging SBOM information among organizations. It supports traceability between the component and the delivered software artifact and can be used together with artifact-specific information such as hashes, licenses, and vulnerabilities.
 
-<ins>Specific examples</ins>  
-“PackageFileName”: “B.exe”  
+**Specific Examples**
+
+```json
+"PackageFileName": "B.exe"
+```
 
 ####     2.7.  Component Download Location  
-<ins>Description and Uses</ins>  
+
+**Description and Uses**
+
 - The URL to retrieve the component.  
 - If the component is open source, use the URL to obtain the source code or binary file of the component being used. A URL that can obtain a version of the component being used is preferable, but it can also be substituted with the URL of the top page of the GitHub repository or the download link on the project's web page.  
 - If the component is COTS or proprietary , use "None" .  
 
-<ins>Specific examples</ins>  
-"PackageDownloadLocation": "`http://acompany/a.zip`"
-“PackageDownloadLocation”: “None”  
+**Specific Examples**
+
+```json
+"PackageDownloadLocation": "http://acompany/a.zip"
+```
+
+```json
+"PackageDownloadLocation": "None"
+```
 
 ####     2.8.  Component Declared License  
-<ins>Description and Uses</ins>  
+
+**Description and Uses**
+
 - A list of the licenses declared by the component’s author. If the component (package) contains multiple license declarations, all of them must be included in this field.  
 - License information not provided by the package author, such as license information from a third-party repository, should be expressed in #2.9 Component Concluded License rather than in this field.  
 - To identify an OSS license, use the SPDX license identifier , but if one is not defined, use the name of the license as is.  
 - This item is optional, and NONE is allowed if there is no declaration by the component creator, and NOASSERTION is allowed if it is unknown.  
 - NOASSERTION may be used when declared license information is unavailable, cannot be reasonably determined, or is intentionally not provided, consistent with SPDX semantics. However, the use of NOASSERTION is expected to be limited to such exceptional cases. Whenever reasonably possible, explicit license information should be provided. Because Concluded License is required by Automotive SBOM, the use of NOASSERTION in this field does not indicate that license assessment has not been performed.
 
-<ins>Specific examples</ins>  
-"licenseDeclared": "(LGPL-2.0-only AND LicenseRef-3)"  
+**Specific Examples**
+
+```json
+"licenseDeclared": "(LGPL-2.0-only AND LicenseRef-3)"
+```
 
 ####     2.9.  Component Concluded License  
-<ins>Description and Uses</ins>  
+
+**Description and Uses**
+
 - The concluded license represents the license assessment associated with the component based on available licensing information.
 - This information is used to communicate the license assessment of the component when exchanging SBOM information among organizations. It may be used to support license verification, compliance activities, and downstream evaluation of licensing obligations.
 
-<ins>Specific examples</ins>  
-"licenseConcluded": "Apache-2.0"  
+**Specific Examples**
+
+```json
+"licenseConcluded": "Apache-2.0"
+```
 
 ####     2.10.  Component Cryptographic Hash  
-<ins>Description and Uses</ins>  
+
+**Description and Uses**
+
 - A hash value of the component, using SHA-256 or higher algorithm.  
 - It is used for purposes such as preventing tampering and verifying authenticity.  
 
-<ins>Specific examples</ins>  
-“FileChecksum”: ”SHA256:5254c46a631572156bd94d61649f8fb30473c150232d28489f88e1d99950b5a8”  
+**Specific Examples**
+
+```json
+"FileChecksum": "SHA256:5254c46a631572156bd94d61649f8fb30473c150232d28489f88e1d99950b5a8"
+```
 
 ####     2.11.  Component Copyright Notice  
-<ins>Description and Uses</ins>  
+
+**Description and Uses**
+
 - Copyright notice associated with the component.  
 - The value should contain the copyright notice provided by the component author, copyright holder, or supplier.
 - If the copyright information is unavailable, cannot be reasonably determined, or is intentionally not provided, NOASSERTION may be used in accordance with SPDX semantics. Whenever reasonably possible, explicit copyright information should be provided.
 
-<ins>Specific examples</ins>  
-"copyrightText ":"The Apache Software Foundation"
+**Specific Examples**
+
+```json
+"copyrightText": "The Apache Software Foundation"
+```
 
 ####     2.12.  Component External Document References  
-<ins>Description and Uses</ins>  
+
+**Description and Uses**
+
 - This field specifies references to external SBOM documents associated with the component.
 - It is used to link components to externally managed SBOMs, support hierarchical SBOM structures, and enable vehicle-level SBOM composition by combining separately managed SBOM documents.
 
-<ins>Specific examples</ins>  
-“ExternalDocumentRef”: ”DocumentRef-B-Component SBOM `http://www.b.sbom` SHA256: e3599f715db5acb8b37f132c5610005d5b849763bc748b2260bc939c225c4342”  
+**Specific Examples**
+
+```json
+"ExternalDocumentRef": "DocumentRef-B-Component SBOM http://www.b.sbom SHA256:e3599f715db5acb8b37f132c5610005d5b849763bc748b2260bc939c225c4342"
+```
 
 ---
 
@@ -435,8 +552,9 @@ However, organizations may have different levels of maturity, tooling, and SBOM 
 By defining a common set of Automotive SBOM data elements independently of any specific tool or document format, this framework aims to improve interoperability among organizations using different SBOM solutions. While format conversion or tool integration may still be required in some environments, adoption of a common Automotive SBOM data model can reduce organization-specific customization, proprietary information requests, and information mapping efforts across the automotive supply chain.  
 
 
-![alt text](./images/Figure-3.png)
-Figure 3 Automotive SBOM Document Format
+![Figure 3](./images/Figure-3.png)
+
+Figure 3. Automotive SBOM Document Format
 
 ### 3.3.2. Checking for Consistency with Existing Industry Standards  
 Table 3 shows the results of the coverage check of the standard format of the SBOM document (whether the content of the SBOM document expressed in that format meets the data field requirements of the Automotive SBOM).   
@@ -466,9 +584,9 @@ Table 3 SBOM Document Standard Format Coverage Check
 (Legend: - :  Not applicable)  
 
 ### 3.3.3. Specific Expression Method (SPDX v2.3 format)  
-Below is an example of Automotive SBOM expressed in SPDX v2.3 format.  
+Below is an example of Automotive SBOM expressed in SPDX v2.3 format.
 
-```
+```json
 {
     "SPDXID": "SPDXRef-DOCUMENT",
     "creationInfo": {
@@ -523,15 +641,17 @@ Below is an example of Automotive SBOM expressed in SPDX v2.3 format.
 ### 3.4.1. SBOM File References  
 As described in Chapter 2.1, the SBOM file for a single vehicle is not represented as a single large SBOM file, but rather as a collection of multiple small SBOMs for each component part, bundled together using external references.  
 
-![alt text](./images/Figure-4.png)
-Figure 4 How to Represent an SBOM File for One Vehicle and its Advantages and Disadvantages  
+![Figure 4](./images/Figure-4.png)
+
+Figure 4. How to Represent an SBOM File for One Vehicle and Its Advantages and Disadvantages
   
 
 Figure 5 shows an image of the reference relationship between the target software and its corresponding SBOM file.  
   
 
-![alt text](./images/Figure-5.png)
-Figure 5 Image of Reference Relationship in SBOM File
+![Figure 5](./images/Figure-5.png)
+
+Figure 5. Image of Reference Relationship in SBOM File
 
 In this case, the contents (excerpt) of the SBOM files for T-Sample and B-Component are as follows:  
 
@@ -724,23 +844,23 @@ The US government has been actively promoting SBOM since 2018. The automotive in
 <br>
 
 # 5. Definition of Terms
-- SBOM data  
+- **SBOM data**  
 The data that makes up the SBOM, a collection of each data field and its corresponding value.  
-- SBOM file  
+- **SBOM file**  
 SBOM data corresponding to any software is represented as a single file.  
-- SBOM Document Format  
+- **SBOM Document Format**  
 A format for writing SBOM documents. Typical examples (standard SBOM document formats) include The Software Package Data Exchange (SPDX) and CycloneDX (various versions).  
-- Direct Use Parts  
+- **Direct Use Parts**  
 Components that are directly used by developers with whom a contract exists in the supply chain (quoting the definition from the Ministry of Economy, Trade and Industry's "Guidelines for Implementing SBOM for Software Management").  
-- Indirectly used parts  
+- **Indirectly used parts**  
 Parts that are reused from parts provided by suppliers (third parties) with whom there is no contractual relationship in the supply chain (quoting the definition from the Ministry of Economy, Trade and Industry's "Guidelines for Implementing SBOM for Software Management").  
-- component  
+- **component**  
 The program components that make up software.  
-- OSS (Open-Source Software)  
+- **OSS (Open-Source Software)**  
 Software whose source code is publicly available and can be used freely by anyone.  
-- COTS(Commercial Off-The-Shelf)  
+- **COTS(Commercial Off-The-Shelf)**  
 Commercially available, off-the-shelf software. COTS software may use OSS, be sold with support and warranties , or be developed using other COTS software.  
-- Proprietary Software  
+- **Proprietary Software**  
 In this document, it refers to software that does not fall under either OSS or COTS, such as in-house developed software or contracted development. Proprietary software can be developed using OSS or COTS.  
 <br>
 <br>
@@ -759,16 +879,24 @@ A special case is that the primary licensee is forced by the component creator t
 The statement about multiple component instances with different meta-information also applies if only the license information differs.  
 
 ## 6.3. License Notation Example  
-OSS licenses in the Automotive SBOM are represented using identifiers defined in the SPDX License List .  
-Because software may be provided under a choice of more than one license, or because a set of licenses may be needed to represent a binary program built by compiling and linking several different source files, each covered by a different license, predefined operators (such as AND, OR, WITH, +, etc.) can be used to express this.  
-- If you need to comply with more than one license at the same time  
-  LGPL-2.1-only **AND** MIT  
-- If offered under one or more license options  
-  LGPL-2.1-only **OR** MIT **OR** BSD-3-Clause  
-- If special exceptions apply to a particular license  
-  GPL-2.0-or-later **WITH** Bison-exception-2.2  
-- To represent the current or later version of the License  
-  CDDL-1.0+
+OSS licenses in the Automotive SBOM are represented using identifiers defined in the SPDX License List.
+Because software may be provided under a choice of more than one license, or because a set of licenses may be needed to represent a binary program built by compiling and linking several different source files, each covered by a different license, predefined operators (such as AND, OR, WITH, +, etc.) can be used to express this.
+
+- If you need to comply with more than one license at the same time
+
+  `LGPL-2.1-only AND MIT`
+
+- If offered under one or more license options
+
+  `LGPL-2.1-only OR MIT OR BSD-3-Clause`
+
+- If special exceptions apply to a particular license
+
+  `GPL-2.0-or-later WITH Bison-exception-2.2`
+
+- To represent the current or later version of the License
+
+  `CDDL-1.0+`
 
 ## 6.4. SBOM Types Definitions in CISA  
 ### Design SBOM
@@ -791,22 +919,42 @@ Because software may be provided under a choice of more than one license, or bec
 - Created based on information about the software that actually runs in the system's execution environment  
 
 ## 6.5. Definition of SBOM Levels in BSI TR-03183  
-### Top-level SBOM
-![alt text](./images/BSI-1-Top-level%20SBOM.png)
+#### Top-level SBOM
+
+![Top-level SBOM](./images/BSI-1-Top-level%20SBOM.png)
+
+Figure BSI-1. Top-level SBOM
+
 - In addition to a complete description of the major component, the SBOM includes a complete description of all components on which the major component directly depends.  
-### n-level SBOM  
-![alt text](./images/BSI-2-n-level%20SBOM.png)
+#### n-level SBOM
+
+![n-level SBOM](./images/BSI-2-n-level%20SBOM.png)
+
+Figure BSI-2. n-level SBOM
+
 - In addition to the full description of the major component, the SBOM contains a full description of all components that are directly or indirectly dependent on the major component at n levels, which means that recursive resolution of transitive dependencies is limited to a depth of n levels.  
 - Top-level SBOM corresponds to a 1-level.  
-### Transitive SBOM
-![alt text](./images/BSI-3-Transitive%20SBOM.png)
+#### Transitive SBOM
+
+![Transitive SBOM](./images/BSI-3-Transitive%20SBOM.png)
+
+Figure BSI-3. Transitive SBOM
+
 - In addition to a full description of the major components, the SBOM contains information about all components that are directly or indirectly dependent on the major component. A full description and recursive resolution of components and their dependencies is performed on each pass up to at least the first external component (i.e., a third-party component). This component must also be fully described in the SBOM, excluding its dependencies; dependencies on external components do not need to be resolved.  
 - the Transitive SBOM has less information about this external component compared to the first external component on the path at level n-1 .  
-### Delivery item SBOM  
-![alt text](./images/BSI-4-Delivery%20item%20SBOM.png)
+#### Delivery item SBOM
+
+![Delivery item SBOM](./images/BSI-4-Delivery%20item%20SBOM.png)
+
+Figure BSI-4. Delivery item SBOM
+
 - In addition to a complete description of the major components, the SBOM contains a complete description of all components that belong to the scope of delivery and that are directly or indirectly dependent on the major components. A complete description and recursive resolution of components and their dependencies is performed at least for each pass that includes the first component outside the scope of delivery. This component must also be fully described in the SBOM , excluding its dependencies (which do not need to be resolved).  
-### Complete SBOM  
-![alt text](./images/BSI-5-Complete%20SBOM.png)
+#### Complete SBOM
+
+![Complete SBOM](./images/BSI-5-Complete%20SBOM.png)
+
+Figure BSI-5. Complete SBOM
+
 - In addition to a complete description of the major components, the SBOM includes a complete description of all components that directly or indirectly depend on the major components. The components and their dependencies are fully described and recursively resolved.  
 
 <br>

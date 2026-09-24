@@ -845,7 +845,30 @@ The United Nations Economic Commission for Europe's World Forum for Harmonizatio
 <br>
 <br>
 
-# 5. Definition of Terms
+# 5. References  
+- 2021 The Minimum Elements For a Software Bill of Materials (SBOM)  
+  https://www.ntia.gov/report/2021/minimum-elements-software-bill-materials-sbom
+
+- 2026 Minimum Elements for a Software Bill of Materials (SBOM)
+  https://www.cisa.gov/resources-tools/resources/2026-minimum-elements-software-bill-materials-sbom
+
+- Framing Software Component Transparency (2024)
+  https://www.cisa.gov/resources-tools/resources/framing-software-component-transparency-2024
+
+- Technical Guideline TR-03183: Cyber Resilience Requirements for Manufacturers and Products  
+  https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/Technische-Richtlinien/TR-nach-Thema-sortiert/tr03183/TR-03183_node.html
+
+- Types of Software Bill of Materials (SBOM)
+  https://www.cisa.gov/resources-tools/resources/types-software-bill-materials-sbom
+
+- Cybersecurity Best Practices for the Safety of Modern Vehicles (2022)  
+  https://www.transportation.gov/regulations/federal-register-documents/2022-19507
+
+<br>
+<br>
+<br>
+
+# Appendix A. Terminology
 - **SBOM data** The data that makes up the SBOM, a collection of each data field and its corresponding value.  
 - **SBOM file** SBOM data corresponding to any software is represented as a single file.  
 - **SBOM Document Format** A format for writing SBOM documents. Typical examples(standard SBOM document formats) include The Software Package Data Exchange(SPDX) and CycloneDX(various versions).  
@@ -855,16 +878,17 @@ The United Nations Economic Commission for Europe's World Forum for Harmonizatio
 - **OSS (Open-Source Software)** Software whose source code is publicly available and can be used freely by anyone.  
 - **COTS (Commercial Off-The-Shelf)** Commercially available, off-the-shelf software. COTS software may use OSS, be sold with support and warranties, or be developed using other COTS software.  
 - **Proprietary Software** In this document, it refers to software that does not fall under either OSS or COTS, such as in-house developed software or contracted development. Proprietary software can be developed using OSS or COTS.  
+
 <br>
 <br>
 <br>
 
-# 6. Appendix (Supplementary Information)  
-## 6.1. License Type Definition in SPDX  
+# Appendix B. Supplemental Information
+## B.1 License Type Definition in SPDX
 Why are there two different license fields for a package (Concluded License and Declared License)?  
 The **Concluded** License field is the license the SPDX file creator believes governs the package. The **Declared** License is what the authors of a project believe governs the package. Often these fields have the same value. When they are different the SPDX file creator should provide background information in the Comments on License field.  
 
-## 6.2. License Type Definitions in BSI (TR-03183)  
+## B.2 License Type Definitions in BSI
 **Declared** licenses are all licenses that have been declared by the creator of a component.  
 A special case is that the primary licensee is forced by the component creator to choose from different sets of licenses which are mutually exclusive. A classic example is Qt where the primary licensee has to decide between GPL and a proprietary license; only the made choice can be handed further down the supply chain. Hence the associated licenses can differ from the declared licenses.  
 
@@ -873,7 +897,7 @@ A special case is that the primary licensee is forced by the component creator t
 **Concluded** licenses are determined by the licensee that is the component creator of the primary component of the current SBOM.  
 The statement about multiple component instances with different meta-information also applies if only the license information differs.  
 
-## 6.3. License Notation Example  
+## B.3 License Notation Example
 OSS licenses in the Automotive SBOM are represented using identifiers defined in the SPDX License List.
 Because software may be provided under a choice of more than one license, or because a set of licenses may be needed to represent a binary program built by compiling and linking several different source files, each covered by a different license, predefined operators (such as AND, OR, WITH, +, etc.) can be used to express this.
 
@@ -893,7 +917,7 @@ Because software may be provided under a choice of more than one license, or bec
 
   `CDDL-1.0+`
 
-## 6.4. SBOM Types Definitions in CISA  
+## B.4 SBOM Types Definitions in CISA
 ### Design SBOM
 - SBOM is created based on planning information before software development, even if the components do not yet exist.  
 - Created based on specifications, RFPs, etc.  
@@ -913,7 +937,7 @@ Because software may be provided under a choice of more than one license, or bec
 - SBOM of the entire system when the software is running on the system  
 - Created based on information about the software that actually runs in the system's execution environment  
 
-## 6.5. Definition of SBOM Levels in BSI TR-03183  
+## B.5 Definition of SBOM Levels in BSI TR-03183
 #### Top-level SBOM
 
 ![Top-level SBOM](./images/BSI-1-Top-level%20SBOM.png)
@@ -956,32 +980,21 @@ Figure BSI-5. Complete SBOM
 <br>
 <br>
 
-# 7. Appendix (External Materials)  
-- 2021 The Minimum Elements For a Software Bill of Materials (SBOM)  
-  https://www.ntia.gov/report/2021/minimum-elements-software-bill-materials-sbom
+# Appendix C. Contributors
 
-- 2026 Minimum Elements for a Software Bill of Materials (SBOM)
-  https://www.cisa.gov/resources-tools/resources/2026-minimum-elements-software-bill-materials-sbom
+The Automotive SBOM Framework is developed through the collaborative efforts of the OpenChain Automotive Work Group.
 
-- Framing Software Component Transparency (2024)
-  https://www.cisa.gov/resources-tools/resources/framing-software-component-transparency-2024
+The editors would like to thank all individuals who contributed to the development, review, and maintenance of this specification.
 
-- Technical Guideline TR-03183: Cyber Resilience Requirements for Manufacturers and Products  
-  https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/Technische-Richtlinien/TR-nach-Thema-sortiert/tr03183/TR-03183_node.html
+## Editors
 
-- Types of Software Bill of Materials (SBOM)
-  https://www.cisa.gov/resources-tools/resources/types-software-bill-materials-sbom
+- Ayumi Watanabe
+- Keisuke Takase
+- Masato Endo
 
-- Cybersecurity Best Practices for the Safety of Modern Vehicles (2022)  
-  https://www.transportation.gov/regulations/federal-register-documents/2022-19507
+## Contributors
+Contributors are listed alphabetically.
+
 <br>
 <br>
 <br>
-
-Change History
-
-|#|version|date|main changes|manager|
-|:--:|:--|:--|:--|:--|
-|1|version 1.0|July 14, 2025|Mobility SBOM to Automotive SBOM|Ayumi Watanabe|
-|2|version 1.1|January 19, 2026|Conversion to a Markdown file|Ayumi Watanabe|
-

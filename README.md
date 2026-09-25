@@ -127,6 +127,15 @@ The primary communication channel is the Automotive SBOM mailing list:
  
 [OpenChain Automotive SBOM Mailing List](https://lists.openchainproject.org/g/automotive-sbom)
  
-## License
+## Copyright and License
 
-This repository follows the license specified by the project maintainers.
+Copyright © 2026 OpenChain Project.
+
+This work is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+You are free to share and adapt this work, including for commercial purposes, provided appropriate attribution is given.
+
+Contributors are acknowledged in the CONTRIBUTORS.md file, which forms part of the project record. Attribution should preserve applicable contributor and project credits.
+
+For details, see the CC BY 4.0 license:
+https://creativecommons.org/licenses/by/4.0/

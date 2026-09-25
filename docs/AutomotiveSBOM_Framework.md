@@ -1,3 +1,24 @@
+# Automotive SBOM Framework
+
+Version 1.0
+
+## Copyright and License
+
+Copyright © 2026 OpenChain Project.
+
+This work is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+You are free to share and adapt this work, including for commercial purposes, provided appropriate attribution is given.
+
+Contributors are acknowledged in the CONTRIBUTORS.md file. Attribution should preserve applicable contributor and project credits.
+
+For details, see the CC BY 4.0 license:
+https://creativecommons.org/licenses/by/4.0/
+
+<br>
+<br>
+<br>
+
 # 1. Overview of Automotive SBOM
 ## 1.1. Background
 SBOM (Software Bill of Materials, a list of the components that make up software) was defined as a means of visualizing the components of software, and is expected to be used in a variety of industries for risk management purposes such as vulnerability and license compliance. The basic SBOM specification definition published by the NTIA of the United States in 2021 is referenced as the de facto global standard, and there are multiple definitions derived from it, but it is defined generically to cover a variety of areas such as SI (system integration) and embedded device development, and when applied to business practices and development methods specific to the automotive industry, issues arise such as the granularity of information and ambiguity of definitions.
